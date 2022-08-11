@@ -1,0 +1,52 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+.topnav {
+    overflow: hidden;
+    float: right;
+    color: white;
+}
+  
+.topnav a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    font-family: canter3D;
+}
+  
+.topnav a:hover {
+    color: red;
+}
+
+.topnav a.active {
+    text-decoration: underline;
+}
+  
+.topnav-right {
+    float: right;
+}
+
+.center {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+.social-media-banner {
+    max-height: 50px;
+}
+
+img {
+    object-fit: cover;
+    margin: 3px;
+    padding: 3px;
+}
+
+p {
+    text-align: center;
+}
