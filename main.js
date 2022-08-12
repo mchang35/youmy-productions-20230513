@@ -21,6 +21,7 @@ function selectPhoto(pic_id) {
 
     // make the selected photo the big one
     selectedPhoto.src = clickedPhoto.src;
+    selectedPhoto.classList.remove()
 
     // change the class for new photo from unselected to selected
     clickedPhoto.classList.remove("unselected");

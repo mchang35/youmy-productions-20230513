@@ -24,7 +24,8 @@ Resources that may be useful:
  * [Element.classList - Javascript](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList)
  * [String slice() - Javascript](https://www.w3schools.com/jsref/jsref_slice_string.asp)
  * [Access Javascript file from HTML file](https://stackoverflow.com/questions/70040795/why-cant-i-access-javascript-function-from-html-file)
- 
+ * [Element.getElementsByTagName() - Javascript](https://developer.mozilla.org/en-US/docs/Web/API/Element/getElementsByTagName)
+ * [Check if a character is a letter - Javascript](https://www.coderrocketfuel.com/article/how-to-check-if-a-character-is-a-letter-using-javascript)
 
 Notes:
  * For the GALLERY:

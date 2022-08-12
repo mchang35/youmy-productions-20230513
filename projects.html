@@ -25,7 +25,6 @@
     <br>
     <br>
     <div class="project-content w-75 center">
-        <!-- <h1 style="text-align:center;">OAKMAN PIZZA (IMAGE HERE)</h1> -->
         <img class="movie-logo-w logo" src="Images/oakmanPizzaLogo.png">
         <br>
         <br>
@@ -58,23 +57,23 @@
                 <img class="logo" src="Images/photo1.png">
             </div>
             <div class="center" id="photo-options">
-                <img id="photo1" class="selected" src="Images/photo1.png" onclick="selectPhoto('photo1');">
-                <img id="photo2" class="unselected" src="Images/photo2.png" onclick="selectPhoto('photo2');">
-                <img id="photo3" class="unselected" src="Images/photo3.png" onclick="selectPhoto('photo3');">
-                <img id="photo4" class="unselected" src="Images/photo4.png" onclick="selectPhoto('photo4');">
-                <img id="photo5" class="unselected" src="Images/photo5.png" onclick="selectPhoto('photo5');">
-                <img id="photo6" class="unselected" src="Images/photo6.png" onclick="selectPhoto('photo6');">
-                <img id="photo7" class="unselected" src="Images/photo7.png" onclick="selectPhoto('photo7');">
-                <img id="photo8" class="unselected" src="Images/photo8.png" onclick="selectPhoto('photo8');">
-                <img id="photo9" class="unselected" src="Images/photo9.png" onclick="selectPhoto('photo9');">
-                <img id="photo10" class="unselected" src="Images/photo10.png" onclick="selectPhoto('photo10');">
-                <img id="photo11" class="unselected" src="Images/photo11.png" onclick="selectPhoto('photo11');">
-                <img id="photo12" class="unselected" src="Images/photo12.png" onclick="selectPhoto('photo12');">
-                <img id="photo13" class="unselected" src="Images/photo13.png" onclick="selectPhoto('photo13');">
-                <img id="photo14" class="unselected" src="Images/photo14.png" onclick="selectPhoto('photo14');">
-                <img id="photo15" class="unselected" src="Images/photo15.png" onclick="selectPhoto('photo15');">
-                <img id="photo16" class="unselected" src="Images/photo16.png" onclick="selectPhoto('photo16');">
-                <img id="photo17" class="unselected" src="Images/photo17.png" onclick="selectPhoto('photo17');">
+                <img id="photo1" class="selected" src="Images/photo1.png" onclick="selectPhoto('1');">
+                <img id="photo2" class="unselected" src="Images/photo2.png" onclick="selectPhoto('2');">
+                <img id="photo3" class="unselected" src="Images/photo3.png" onclick="selectPhoto('3');">
+                <img id="photo4" class="unselected" src="Images/photo4.png" onclick="selectPhoto('4');">
+                <img id="photo5" class="unselected" src="Images/photo5.png" onclick="selectPhoto('5');">
+                <img id="photo6" class="unselected" src="Images/photo6.png" onclick="selectPhoto('6');">
+                <img id="photo7" class="unselected" src="Images/photo7.png" onclick="selectPhoto('7');">
+                <img id="photo8" class="unselected" src="Images/photo8.png" onclick="selectPhoto('8');">
+                <img id="photo9" class="unselected" src="Images/photo9.png" onclick="selectPhoto('9');">
+                <img id="photo10" class="unselected" src="Images/photo10.png" onclick="selectPhoto('10');">
+                <img id="photo11" class="unselected" src="Images/photo11.png" onclick="selectPhoto('11');">
+                <img id="photo12" class="unselected" src="Images/photo12.png" onclick="selectPhoto('12');">
+                <img id="photo13" class="unselected" src="Images/photo13.png" onclick="selectPhoto('13');">
+                <img id="photo14" class="unselected" src="Images/photo14.png" onclick="selectPhoto('14');">
+                <img id="photo15" class="unselected" src="Images/photo15.png" onclick="selectPhoto('15');">
+                <img id="photo16" class="unselected" src="Images/photo16.png" onclick="selectPhoto('16');">
+                <img id="photo17" class="unselected" src="Images/photo17.png" onclick="selectPhoto('17');">
             </div>
         </div>
     </div>
@@ -93,17 +92,27 @@
 <!-- <script src="main.js"></script> -->
 
 <script>
-    function selectPhoto(pic_id) {
-        console.log("A photo has been clicked");
+    function selectPhoto(picNum) {
+        console.log("A photo has been clicked! Its ID is " + picNum);
 
-        let clickedPhoto = document.getElementById(pic_id);
+        let selectedPhoto = document.getElementById("selected-photo").getElementsByTagName("img")[0];
+        let oldPhotoNum = selectedPhoto.src.slice(-6, -4);
+        if (oldPhotoNum.at(0).match(/[a-zA-Z]/)) {
+            oldPhotoNum = oldPhotoNum.slice(1);
+        }
+
+        if (picNum==oldPhotoNum) {
+            console.log("We are selecting the same picture");
+            return;
+        }
+
+        clickedPhotoId = 'photo' + picNum;
+
+        let clickedPhoto = document.getElementById(clickedPhotoId);
 
         // make the previously selected photo UNselected
-        let selectedPhoto = document.getElementById("selected-photo");
-        let oldPhotoSrc = selectedPhoto.src;
-        let oldPhotoId = oldPhotoSrc.slice(7, -4);
-
-        console.log("Old photo id:" + oldPhotoId);
+        let oldPhotoId = 'photo' + oldPhotoNum;
+        console.log("Old photo id: " + oldPhotoId);
 
         let oldPhoto = document.getElementById(oldPhotoId);
         oldPhoto.classList.remove("selected");

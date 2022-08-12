@@ -108,12 +108,15 @@ p {
 
 .unselected {
     opacity: 0.6;
+    /* border: 2px solid transparent; */
 }
 
 .unselected:hover {
     opacity: 1;
+    /* border: 2px solid transparent; */
 }
 
 .selected {
     border: 2px solid red;
+    margin: -2px;
 }
