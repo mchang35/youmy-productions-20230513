@@ -17,6 +17,14 @@ Resources that may be useful:
  * [CSS setting properties for objects inside of div ID](https://stackoverflow.com/questions/24386201/set-image-properties-based-on-id-in-css-file)
  * [Ideas for the photo gallery](http://www.cssplay.co.uk/menu/gallery3l.html)
  * [More ideas for photo gallery](https://www.sliderrevolution.com/resources/css-gallery/)
+ * [Javascript function syntax](https://www.w3schools.com/js/js_functions.asp)
+ * [Document.getElementById() - Javascript](https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById)
+ * [Adding a border to an image - CSS](https://www.w3schools.com/howto/howto_css_border_image.asp)
+ * [Get ID of clicked item - Javascript](https://stackoverflow.com/questions/4825295/onclick-to-get-the-id-of-the-clicked-button)
+ * [Element.classList - Javascript](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList)
+ * [String slice() - Javascript](https://www.w3schools.com/jsref/jsref_slice_string.asp)
+ * [Access Javascript file from HTML file](https://stackoverflow.com/questions/70040795/why-cant-i-access-javascript-function-from-html-file)
+ 
 
 Notes:
  * For the GALLERY:

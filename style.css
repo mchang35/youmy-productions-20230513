@@ -79,7 +79,8 @@ p {
 } */
 
 .movie-poster {
-    max-width: 500px;
+    max-width: 90%;
+    /* width: 500px; */
     height: auto;
 }
 
@@ -90,6 +91,13 @@ p {
     height: auto;
 }
 
+#photo-options {
+    overflow-x: scroll;
+    margin: auto;
+    width: 100%;
+    padding: 10px;
+}
+
 #photo-options img {
     /* max-width: 250px; */
     max-width: 25%;
@@ -98,6 +106,14 @@ p {
     margin-right: 2px;
 }
 
-#photo-options {
-    overflow-x: scroll;
+.unselected {
+    opacity: 0.6;
+}
+
+.unselected:hover {
+    opacity: 1;
+}
+
+.selected {
+    border: 2px solid red;
 }
