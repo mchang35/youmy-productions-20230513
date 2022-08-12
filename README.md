@@ -12,6 +12,10 @@ Resources that may be useful:
  * [Bootstrap: Grid System](https://getbootstrap.com/docs/4.0/layout/grid/)
  * [Aligning an image to the right](https://www.delftstack.com/howto/css/css-align-image-right/#:~:text=Select%20the%20img%20tag%20in,the%20right%20of%20the%20webpage.)
  * [Link a phone number](https://www.gaintap.com/archives/clickable-website-phone-number-and-call-tracking-guide/)
+ * [Resizing images](https://imagekit.io/blog/how-to-resize-image-in-html/#:~:text=If%20your%20image%20doesn't,in%20px%20i.e.%20CSS%20pixels.)
+ * [Centering an image](https://www.w3schools.com/howto/howto_css_image_center.asp)
+ * [CSS setting properties for objects inside of div ID](https://stackoverflow.com/questions/24386201/set-image-properties-based-on-id-in-css-file)
+ * [Ideas for the photo gallery](http://www.cssplay.co.uk/menu/gallery3l.html)
 
 Notes:
  * For the GALLERY:
