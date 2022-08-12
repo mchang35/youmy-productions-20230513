@@ -16,6 +16,7 @@ Resources that may be useful:
  * [Centering an image](https://www.w3schools.com/howto/howto_css_image_center.asp)
  * [CSS setting properties for objects inside of div ID](https://stackoverflow.com/questions/24386201/set-image-properties-based-on-id-in-css-file)
  * [Ideas for the photo gallery](http://www.cssplay.co.uk/menu/gallery3l.html)
+ * [More ideas for photo gallery](https://www.sliderrevolution.com/resources/css-gallery/)
 
 Notes:
  * For the GALLERY:
