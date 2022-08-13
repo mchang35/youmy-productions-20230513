@@ -5,6 +5,8 @@
     overflow: hidden;
     float: right;
     color: white;
+    padding-top: 10px;
+    padding-right: 10px;
 }
   
 .topnav a {
@@ -55,6 +57,7 @@ p {
     text-align: center;
 }
 
+/* home page */
 .logo {
     margin-left: auto;
     margin-right: auto;
@@ -62,58 +65,90 @@ p {
 }
 
 .logo-w {
-    /* max-width: 500px; */
     max-width: 50%;
+    height: auto;
+}
+
+/* about, projects, contact pages */
+.logo-sw {
+    width: 15%;
     height: auto;
 }
 
 /* Projects page */
 .movie-logo-w {
-    /* max-width: 800px; */
     max-width: 80%;
     height: auto;
 }
 
-/* .poster-watch-grid {
-
-} */
-
 .movie-poster {
     max-width: 90%;
-    /* width: 500px; */
     height: auto;
+    display: inline;
 }
 
 /* Projects page: Gallery */
 #selected-photo img {
-    /* max-width: 750px; */
     max-width: 75%;
     height: auto;
+    position: relative;
+}
+
+.prev, .next {
+    cursor: pointer;
+    /* top: 40%; */
+    width: auto;
+    /* height: 50px; */
+    padding: 16px;
+    margin-top: auto;
+    margin-bottom: auto;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.prev {
+    margin-right: 0;
+    margin-left: auto;
+    right: 0;
+}
+
+.next {
+    margin-left: 0;
+    margin-right: auto;
+    left: 0;
+}
+
+.prev:hover, .next:hover {
+    color: red;
 }
 
 #photo-options {
-    overflow-x: scroll;
+    overflow: scroll;
+    white-space:nowrap;
     margin: auto;
     width: 100%;
     padding: 10px;
 }
 
 #photo-options img {
-    /* max-width: 250px; */
     max-width: 25%;
     height: auto;
     margin-left: 2px;
     margin-right: 2px;
+    display:inline-block;
 }
 
 .unselected {
-    opacity: 0.6;
-    /* border: 2px solid transparent; */
+    opacity: 0.4;
+    border: 2px solid transparent;
 }
 
 .unselected:hover {
     opacity: 1;
-    /* border: 2px solid transparent; */
 }
 
 .selected {

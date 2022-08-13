@@ -26,16 +26,22 @@ Resources that may be useful:
  * [Access Javascript file from HTML file](https://stackoverflow.com/questions/70040795/why-cant-i-access-javascript-function-from-html-file)
  * [Element.getElementsByTagName() - Javascript](https://developer.mozilla.org/en-US/docs/Web/API/Element/getElementsByTagName)
  * [Check if a character is a letter - Javascript](https://www.coderrocketfuel.com/article/how-to-check-if-a-character-is-a-letter-using-javascript)
+ * [Force all elements on a div to be on one line](https://www.designcise.com/web/tutorial/how-to-force-html-elements-to-stay-on-the-same-line#:~:text=To%20get%20all%20elements%20to,set%20on%20all%20child%20elements.)
+ * [Convert string to integer -- parseInt() - Javascript](https://www.tutorialspoint.com/how-to-convert-a-string-into-integer-in-javascript#:~:text=To%20convert%20a%20string%20to,be%20returned%20as%20the%20output.)
+ * [Cast to String - Javascript](https://www.w3schools.com/jsref/jsref_string.asp)
+ * [Javascript conditional statements](https://www.w3schools.com/js/js_if_else.asp)
+ *
 
 Notes:
  * For the GALLERY:
-    * Likely will have to use javascript to get this going
-    * put all photos into a list or something
+    * Likely will have to use javascript to get this going - done
+    * put all photos into a list or something - done
     * have a next and previous button
     * wraparound for photos (if we reach the end, we wrap around back to the beginning)
     * when clicking the next, we grab the next X photos (based on how many
     can fit on the page)
-    * similar happens when clicking previous
-    * also have a part that displays the current picture largely
-    * currently selected picture has a border around it or something
-    * 
+      * similar happens when clicking previous
+    * also have a part that displays the current picture largely - done
+    * currently selected picture has a border around it or something - done
+    * CAROUSEL? 
+ * FONT: Rustic Printed (for ALL text)

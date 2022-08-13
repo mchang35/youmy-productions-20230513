@@ -20,8 +20,7 @@
 </div>
 
 <div class="content-container" id="content-container">
-    <br><br>
-    <img class="logo-w logo" src="Images/logo.png">
+    <img class="logo-sw logo" src="Images/logo.png">
     <br>
     <br>
     <div class="project-content w-75 center">
@@ -54,7 +53,23 @@
         <!-- photo gallery here -->
         <div id="gallery">
             <div id="selected-photo" >
-                <img class="logo" src="Images/photo1.png">
+                <p>1 / 17</p>
+                <div class="row">
+                    <div class="col">
+                        <a class="prev" onclick="plusPhotoNum(-1)">&#10094;</a>
+                    </div>
+                    <div class="col-6">
+                        <img class="logo" src="Images/photo1.png">
+                    </div>
+                    <div class="col">
+                        <a class="next" onclick="plusPhotoNum(1)">&#10095;</a>
+                    </div>
+                </div>
+                
+
+                
+                
+
             </div>
             <div class="center" id="photo-options">
                 <img id="photo1" class="selected" src="Images/photo1.png" onclick="selectPhoto('1');">
@@ -92,23 +107,26 @@
 <!-- <script src="main.js"></script> -->
 
 <script>
-    function selectPhoto(picNum) {
-        console.log("A photo has been clicked! Its ID is " + picNum);
+    var TOTAL_NUM_PICS = 17;
 
+    function getCurrentPhotoNum() {
         let selectedPhoto = document.getElementById("selected-photo").getElementsByTagName("img")[0];
         let oldPhotoNum = selectedPhoto.src.slice(-6, -4);
+
+        console.log("old photo number before checking double digits: " + oldPhotoNum);
+
+        // if the number is not double digits
         if (oldPhotoNum.at(0).match(/[a-zA-Z]/)) {
             oldPhotoNum = oldPhotoNum.slice(1);
         }
 
-        if (picNum==oldPhotoNum) {
-            console.log("We are selecting the same picture");
-            return;
-        }
+        return oldPhotoNum
+    }
 
-        clickedPhotoId = 'photo' + picNum;
-
-        let clickedPhoto = document.getElementById(clickedPhotoId);
+    function switchPhotos(oldPhotoNum, newPhotoNum) {
+        newPhotoId = 'photo' + newPhotoNum;
+        console.log("new photo id: " + newPhotoId);
+        let newPhoto = document.getElementById(newPhotoId);
 
         // make the previously selected photo UNselected
         let oldPhotoId = 'photo' + oldPhotoNum;
@@ -119,11 +137,52 @@
         oldPhoto.classList.add("unselected");
 
         // make the selected photo the big one
-        selectedPhoto.src = clickedPhoto.src;
+        let selectedPhoto = document.getElementById("selected-photo");
+        selectedPhoto.getElementsByTagName("img")[0].src = newPhoto.src;
+        selectedPhoto.getElementsByTagName("p")[0].innerText = newPhotoNum + ' / 17';
 
         // change the class for new photo from unselected to selected
-        clickedPhoto.classList.remove("unselected");
-        clickedPhoto.classList.add("selected");
+        newPhoto.classList.remove("unselected");
+        newPhoto.classList.add("selected");
+    }
+
+    function selectPhoto(picNum) {
+        console.log("A photo has been clicked! Its ID is " + picNum);
+
+        let oldPhotoNum = getCurrentPhotoNum();
+
+        switchPhotos(oldPhotoNum, picNum)
+    }
+
+    function plusPhotoNum(change) {
+        console.log("We are adding " + change);
+        // get id of current photo
+        let oldPhotoNum = getCurrentPhotoNum();
+
+        console.log("the old number: " + oldPhotoNum);
+
+        // get id of next or previous (new) photo
+        let newPhotoNum = parseInt(oldPhotoNum) + change;
+
+        console.log("The new number before checks: " + newPhotoNum);
+        
+        if (newPhotoNum > TOTAL_NUM_PICS) {
+            newPhotoNum = 1;
+        } else if (newPhotoNum < 1) {
+            newPhotoNum = TOTAL_NUM_PICS;
+        }
+
+        console.log("The new number after checks: " + newPhotoNum);
+
+        let newPhotoNumStr = String(newPhotoNum);
+
+        console.log("The new number after string-ifying: " + newPhotoNumStr);
+
+        // change/update the photos
+        switchPhotos(oldPhotoNum, newPhotoNumStr);
+
+        // do something to make sure that the selected photo is on the
+        // screen at all times
     }
 </script>
 
