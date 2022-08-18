@@ -43,6 +43,10 @@ body {
     padding: 10px;
 }
 
+.content-container {
+    display: inline;
+}
+
 .social-media-banner {
     max-height: 50px;
 }
@@ -89,9 +93,11 @@ p {
 
 /* Projects page: Gallery */
 #selected-photo img {
-    max-width: 75%;
+    max-width: 90%;
     height: auto;
-    position: relative;
+    /* position: relative; */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .prev, .next {
@@ -108,6 +114,8 @@ p {
     border-radius: 0 3px 3px 0;
     user-select: none;
     -webkit-user-select: none;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .prev {
@@ -154,4 +162,13 @@ p {
 .selected {
     border: 2px solid red;
     margin: -2px;
+}
+
+/* Contacts page */
+.contact-content a {
+    color:white;
+}
+
+.contact-content a:hover {
+    color:red;
 }

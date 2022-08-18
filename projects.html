@@ -59,17 +59,12 @@
                         <a class="prev" onclick="plusPhotoNum(-1)">&#10094;</a>
                     </div>
                     <div class="col-6">
-                        <img class="logo" src="Images/photo1.png">
+                        <img src="Images/photo1.png">
                     </div>
                     <div class="col">
                         <a class="next" onclick="plusPhotoNum(1)">&#10095;</a>
                     </div>
                 </div>
-                
-
-                
-                
-
             </div>
             <div class="center" id="photo-options">
                 <img id="photo1" class="selected" src="Images/photo1.png" onclick="selectPhoto('1');">
@@ -109,6 +104,11 @@
 <script>
     var TOTAL_NUM_PICS = 17;
 
+    /*
+    getCurrentPhotoNum
+    parameters: none
+    returns: the number of the currently selected photo, as a STRING
+    */
     function getCurrentPhotoNum() {
         let selectedPhoto = document.getElementById("selected-photo").getElementsByTagName("img")[0];
         let oldPhotoNum = selectedPhoto.src.slice(-6, -4);
@@ -123,6 +123,15 @@
         return oldPhotoNum
     }
 
+    /*
+    switchPhotos
+    Changes the interface look so that the newly selected photo replaces
+    the current photo as the selected photo on the screen.
+    parameters: 
+        - oldPhotoNum: the number of the currently selected photo, as a STRING
+        - newPhotoNum: the number of the new selected photo, as a STRING
+    returns: nothing
+    */
     function switchPhotos(oldPhotoNum, newPhotoNum) {
         newPhotoId = 'photo' + newPhotoNum;
         console.log("new photo id: " + newPhotoId);
@@ -131,7 +140,7 @@
         // make the previously selected photo UNselected
         let oldPhotoId = 'photo' + oldPhotoNum;
         console.log("Old photo id: " + oldPhotoId);
-
+    
         let oldPhoto = document.getElementById(oldPhotoId);
         oldPhoto.classList.remove("selected");
         oldPhoto.classList.add("unselected");
@@ -139,13 +148,23 @@
         // make the selected photo the big one
         let selectedPhoto = document.getElementById("selected-photo");
         selectedPhoto.getElementsByTagName("img")[0].src = newPhoto.src;
-        selectedPhoto.getElementsByTagName("p")[0].innerText = newPhotoNum + ' / 17';
+
+        // change the label on the selected photo to be <new number> / <total # of pics>
+        selectedPhoto.getElementsByTagName("p")[0].innerText = newPhotoNum + ' / ' + String(TOTAL_NUM_PICS);
 
         // change the class for new photo from unselected to selected
         newPhoto.classList.remove("unselected");
         newPhoto.classList.add("selected");
     }
 
+    /*
+    selectPhoto
+    Executed when a user selects a photo manually from the scroll bar of
+    photos.
+    parameters:
+        - picNum: the number of the newly selected photo, as a STRING
+    returns: nothing
+    */
     function selectPhoto(picNum) {
         console.log("A photo has been clicked! Its ID is " + picNum);
 
@@ -154,6 +173,30 @@
         switchPhotos(oldPhotoNum, picNum)
     }
 
+    function scrollVisiblePhoto(picNum) {
+        // do something to make sure that the selected photo is on the
+        // screen at all times
+
+        // get photo options div (ID)
+
+        // get position of the current image
+
+        // get window of visible pictures
+
+        // check if the position of the current image is visible inside ^ window
+
+        // if not: set the scroll position to include the current image
+        // so that it is visible
+    }
+
+    /*
+    plusPhotoNum
+    Executed when a user presses either the next or the previous button.
+    parameters: 
+        - change: an INT representing the change of photo number from the
+        currently selected photo number (usually -1 or 1)
+    returns: nothing
+    */
     function plusPhotoNum(change) {
         console.log("We are adding " + change);
         // get id of current photo
@@ -181,8 +224,8 @@
         // change/update the photos
         switchPhotos(oldPhotoNum, newPhotoNumStr);
 
-        // do something to make sure that the selected photo is on the
-        // screen at all times
+        scrollVisiblePhoto(newPhotoNumStr);
+
     }
 </script>
 
