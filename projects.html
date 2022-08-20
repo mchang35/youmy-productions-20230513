@@ -113,8 +113,6 @@
         let selectedPhoto = document.getElementById("selected-photo").getElementsByTagName("img")[0];
         let oldPhotoNum = selectedPhoto.src.slice(-6, -4);
 
-        console.log("old photo number before checking double digits: " + oldPhotoNum);
-
         // if the number is not double digits
         if (oldPhotoNum.at(0).match(/[a-zA-Z]/)) {
             oldPhotoNum = oldPhotoNum.slice(1);
@@ -134,12 +132,10 @@
     */
     function switchPhotos(oldPhotoNum, newPhotoNum) {
         newPhotoId = 'photo' + newPhotoNum;
-        console.log("new photo id: " + newPhotoId);
         let newPhoto = document.getElementById(newPhotoId);
 
         // make the previously selected photo UNselected
         let oldPhotoId = 'photo' + oldPhotoNum;
-        console.log("Old photo id: " + oldPhotoId);
     
         let oldPhoto = document.getElementById(oldPhotoId);
         oldPhoto.classList.remove("selected");
@@ -166,27 +162,23 @@
     returns: nothing
     */
     function selectPhoto(picNum) {
-        console.log("A photo has been clicked! Its ID is " + picNum);
-
         let oldPhotoNum = getCurrentPhotoNum();
 
         switchPhotos(oldPhotoNum, picNum)
     }
 
+    /*
+    scrollVisiblePhoto
+    Makes sure that the selected photo is visible in the gallery upon
+    selection/activation.
+    parameters: 
+        - picNum: the number of the photo we want to be visible in the
+        gallery, as a STRING
+    returns: nothing
+    */
     function scrollVisiblePhoto(picNum) {
-        // do something to make sure that the selected photo is on the
-        // screen at all times
-
-        // get photo options div (ID)
-
-        // get position of the current image
-
-        // get window of visible pictures
-
-        // check if the position of the current image is visible inside ^ window
-
-        // if not: set the scroll position to include the current image
-        // so that it is visible
+        let currImage = document.getElementById("photo" + picNum);
+        currImage.scrollIntoView({behavior: "smooth"});
     }
 
     /*
@@ -198,16 +190,11 @@
     returns: nothing
     */
     function plusPhotoNum(change) {
-        console.log("We are adding " + change);
         // get id of current photo
         let oldPhotoNum = getCurrentPhotoNum();
 
-        console.log("the old number: " + oldPhotoNum);
-
         // get id of next or previous (new) photo
         let newPhotoNum = parseInt(oldPhotoNum) + change;
-
-        console.log("The new number before checks: " + newPhotoNum);
         
         if (newPhotoNum > TOTAL_NUM_PICS) {
             newPhotoNum = 1;
@@ -215,15 +202,13 @@
             newPhotoNum = TOTAL_NUM_PICS;
         }
 
-        console.log("The new number after checks: " + newPhotoNum);
-
         let newPhotoNumStr = String(newPhotoNum);
-
-        console.log("The new number after string-ifying: " + newPhotoNumStr);
 
         // change/update the photos
         switchPhotos(oldPhotoNum, newPhotoNumStr);
 
+        // make sure the selected photo is visible in the
+        // scrollable gallery
         scrollVisiblePhoto(newPhotoNumStr);
 
     }
