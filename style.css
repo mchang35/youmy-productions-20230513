@@ -7,6 +7,7 @@
     color: white;
     padding-top: 10px;
     padding-right: 10px;
+    font-family: rusticPrinted;
 }
   
 .topnav a {
@@ -16,7 +17,7 @@
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
-    font-family: canter3D;
+    font-family: rusticPrinted;
 }
   
 .topnav a:hover {
@@ -32,9 +33,15 @@
 }
 
 /* General */
+@font-face {
+    font-family: rusticPrinted;
+    src: url('rustic-printed-9718688/Rustic Printed.ttf');
+}
+
 body {
     background-color: black;
     color: white;
+    font-family: rusticPrinted;
 }
 
 .center {
@@ -59,6 +66,7 @@ img {
 
 p {
     text-align: center;
+    font-family: rusticPrinted;
 }
 
 /* home page */

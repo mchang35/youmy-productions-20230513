@@ -30,7 +30,9 @@ Resources that may be useful:
  * [Convert string to integer -- parseInt() - Javascript](https://www.tutorialspoint.com/how-to-convert-a-string-into-integer-in-javascript#:~:text=To%20convert%20a%20string%20to,be%20returned%20as%20the%20output.)
  * [Cast to String - Javascript](https://www.w3schools.com/jsref/jsref_string.asp)
  * [Javascript conditional statements](https://www.w3schools.com/js/js_if_else.asp)
- *
+ * [Rustic Printed font](https://ifonts.xyz/downfile/0337d7e7841584aeb04f0315d74a5c0d.271867)
+ * [Using downloaded fonts](https://www.w3schools.com/css/css3_fonts.asp)
+ * 
 
 Notes:
  * For the GALLERY:
