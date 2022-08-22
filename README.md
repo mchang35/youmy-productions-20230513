@@ -41,6 +41,7 @@ Resources that may be useful:
  * 
 
 Notes:
+ * Generally, it takes a while (at least 2-3 minutes) for the connection between the js file and the HTML file to work.
  * For the GALLERY:
     * DONE
       * Likely will have to use javascript to get this going
