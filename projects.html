@@ -50,20 +50,13 @@
         <br>
         <br>
         <h4 style="text-align:center;">GALLERY</h4>
-        <!-- photo gallery here -->
         <div id="gallery">
             <div id="selected-photo" >
                 <p>1 / 17</p>
                 <div class="row">
-                    <div class="col">
-                        <a class="prev" onclick="plusPhotoNum(-1)">&#10094;</a>
-                    </div>
-                    <div class="col-6">
-                        <img src="Images/photo1.png">
-                    </div>
-                    <div class="col">
-                        <a class="next" onclick="plusPhotoNum(1)">&#10095;</a>
-                    </div>
+                    <a class="prev" onclick="plusPhotoNum(-1);">&#10094;</a>
+                    <img src="Images/photo1.png">
+                    <a class="next" onclick="plusPhotoNum(1);">&#10095;</a>
                 </div>
             </div>
             <div class="center" id="photo-options">
@@ -99,9 +92,9 @@
 
 </body>
 
-<!-- <script src="main.js"></script> -->
+<script src="main.js"></script>
 
-<script>
+<!-- <script>
     var TOTAL_NUM_PICS = 17;
 
     /*
@@ -212,6 +205,6 @@
         scrollVisiblePhoto(newPhotoNumStr);
 
     }
-</script>
+</script> -->
 
 </html>

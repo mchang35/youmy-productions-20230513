@@ -27,10 +27,6 @@
 .topnav a.active {
     text-decoration: underline;
 }
-  
-.topnav-right {
-    float: right;
-}
 
 /* General */
 @font-face {
@@ -46,7 +42,7 @@ body {
 
 .center {
     margin: auto;
-    width: 50%;
+    /* width: 50%; */
     padding: 10px;
 }
 
@@ -179,4 +175,9 @@ p {
 
 .contact-content a:hover {
     color:red;
+}
+
+.contact-content p {
+    margin-bottom: 0px;
+    line-height: 10px;
 }

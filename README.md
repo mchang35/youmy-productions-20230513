@@ -9,25 +9,26 @@ When prompted with this: `Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000
 
 Resources that may be useful: 
  * Resources related to Javascript:
-   * [Javascript function syntax](https://www.w3schools.com/js/js_functions.asp)
-   * [Document.getElementById() - Javascript](https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById)
-   * [Get ID of clicked item - Javascript](https://stackoverflow.com/questions/4825295/onclick-to-get-the-id-of-the-clicked-button)
-   * [Element.classList - Javascript](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList)
-   * [String slice() - Javascript](https://www.w3schools.com/jsref/jsref_slice_string.asp)
-   * [Access Javascript file from HTML file](https://stackoverflow.com/questions/70040795/why-cant-i-access-javascript-function-from-html-file)
-   * [Element.getElementsByTagName() - Javascript](https://developer.mozilla.org/en-US/docs/Web/API/Element/getElementsByTagName)
-   * [Check if a character is a letter - Javascript](https://www.coderrocketfuel.com/article/how-to-check-if-a-character-is-a-letter-using-javascript)
-   * [Convert string to integer -- parseInt() - Javascript](https://www.tutorialspoint.com/how-to-convert-a-string-into-integer-in-javascript#:~:text=To%20convert%20a%20string%20to,be%20returned%20as%20the%20output.)
-   * [Cast to String - Javascript](https://www.w3schools.com/jsref/jsref_string.asp)
-   * [Javascript conditional statements](https://www.w3schools.com/js/js_if_else.asp)
-   * [scrollTop and scrollLeft on an element - Javascript](https://www.javascripttutorial.net/dom/css/get-and-set-scroll-position-of-an-element/)
+    * [Javascript function syntax](https://www.w3schools.com/js/js_functions.asp)
+    * [Document.getElementById() - Javascript](https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById)
+    * [Get ID of clicked item - Javascript](https://stackoverflow.com/questions/4825295/onclick-to-get-the-id-of-the-clicked-button)
+    * [Element.classList - Javascript](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList)
+    * [String slice() - Javascript](https://www.w3schools.com/jsref/jsref_slice_string.asp)
+    * [Access Javascript file from HTML file](https://stackoverflow.com/questions/70040795/why-cant-i-access-javascript-function-from-html-file)
+    * [Element.getElementsByTagName() - Javascript](https://developer.mozilla.org/en-US/docs/Web/API/Element/getElementsByTagName)
+    * [Check if a character is a letter - Javascript](https://www.coderrocketfuel.com/article/how-to-check-if-a-character-is-a-letter-using-javascript)
+    * [Convert string to integer -- parseInt() - Javascript](https://www.tutorialspoint.com/how-to-convert-a-string-into-integer-in-javascript#:~:text=To%20convert%20a%20string%20to,be%20returned%20as%20the%20output.)
+    * [Cast to String - Javascript](https://www.w3schools.com/jsref/jsref_string.asp)
+    * [Javascript conditional statements](https://www.w3schools.com/js/js_if_else.asp)
+    * [scrollTop and scrollLeft on an element - Javascript](https://www.javascripttutorial.net/dom/css/get-and-set-scroll-position-of-an-element/)
+    * [Element.scrollIntoView() - Javascript](https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView)
  * Resources related to the gallery:
-   * [How to make a photo slideshow gallery in CSS](https://www.w3schools.com/howto/howto_js_slideshow_gallery.asp)
-   * [Ideas for the photo gallery](http://www.cssplay.co.uk/menu/gallery3l.html)
-   * [More ideas for photo gallery](https://www.sliderrevolution.com/resources/css-gallery/)
+    * [How to make a photo slideshow gallery in CSS](https://www.w3schools.com/howto/howto_js_slideshow_gallery.asp)
+    * [Ideas for the photo gallery](http://www.cssplay.co.uk/menu/gallery3l.html)
+    * [More ideas for photo gallery](https://www.sliderrevolution.com/resources/css-gallery/)
  * Resources related to the font:
-   * [Rustic Printed font](https://ifonts.xyz/downfile/0337d7e7841584aeb04f0315d74a5c0d.271867)
-   * [Using downloaded fonts](https://www.w3schools.com/css/css3_fonts.asp)
+    * [Rustic Printed font](https://ifonts.xyz/downfile/0337d7e7841584aeb04f0315d74a5c0d.271867)
+    * [Using downloaded fonts](https://www.w3schools.com/css/css3_fonts.asp)
  * [Bootstrap: Grid System](https://getbootstrap.com/docs/4.0/layout/grid/)
  * [Aligning an image to the right](https://www.delftstack.com/howto/css/css-align-image-right/#:~:text=Select%20the%20img%20tag%20in,the%20right%20of%20the%20webpage.)
  * [Link a phone number](https://www.gaintap.com/archives/clickable-website-phone-number-and-call-tracking-guide/)
@@ -48,6 +49,6 @@ Notes:
     * Still to do:
       * have a next and previous button - done BUT not in the correct place
  * Still TO DO (general):
-  * Place previous and next buttons for gallery in correct spot
+  * Place previous and next buttons for gallery in correct spot -- HOW DID I FIX THIS? I TOOK THE SELECTED PHOTO AND PREV AND NEXT BUTTONS OUT OF THE COLUMNS AND JUST PUT THEM IN A SINGLE ROW
   * place the big logo in the correct place (direct middle)
  * FONT: Rustic Printed (for ALL text)
