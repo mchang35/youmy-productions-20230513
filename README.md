@@ -54,4 +54,6 @@ Notes:
  * Still TO DO (general):
   * Place previous and next buttons for gallery in correct spot -- HOW DID I FIX THIS? I TOOK THE SELECTED PHOTO AND PREV AND NEXT BUTTONS OUT OF THE COLUMNS AND JUST PUT THEM IN A SINGLE ROW
   * place the big logo in the correct place (direct middle)
+  * adjust for PHONE/smaller screens
+  * make the navigation bar into small lines if the screen is too small
  * FONT: Rustic Printed (for ALL text)
