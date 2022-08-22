@@ -37,6 +37,8 @@ Resources that may be useful:
  * [CSS setting properties for objects inside of div ID](https://stackoverflow.com/questions/24386201/set-image-properties-based-on-id-in-css-file)
  * [Adding a border to an image - CSS](https://www.w3schools.com/howto/howto_css_border_image.asp)
  * [Force all elements on a div to be on one line](https://www.designcise.com/web/tutorial/how-to-force-html-elements-to-stay-on-the-same-line#:~:text=To%20get%20all%20elements%20to,set%20on%20all%20child%20elements.)
+ * [Overlay divs using CSS](https://www.tutorialrepublic.com/faq/how-to-overlay-one-div-over-another-div-using-css.php#:~:text=You%20can%20use%20the%20CSS,%2C%20fixed%20%2C%20or%20relative%20).)
+ * 
 
 Notes:
  * For the GALLERY:

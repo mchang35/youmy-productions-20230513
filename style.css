@@ -8,6 +8,8 @@
     padding-top: 10px;
     padding-right: 10px;
     font-family: rusticPrinted;
+    /* z-index: 9; */
+    /* position: absolute; */
 }
   
 .topnav a {
@@ -32,6 +34,14 @@
 @font-face {
     font-family: rusticPrinted;
     src: url('rustic-printed-9718688/Rustic Printed.ttf');
+}
+
+.absolute-position {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    opacity: 0.99;
 }
 
 body {
@@ -99,16 +109,13 @@ p {
 #selected-photo img {
     max-width: 90%;
     height: auto;
-    /* position: relative; */
     margin-left: auto;
     margin-right: auto;
 }
 
 .prev, .next {
     cursor: pointer;
-    /* top: 40%; */
     width: auto;
-    /* height: 50px; */
     padding: 16px;
     margin-top: auto;
     margin-bottom: auto;
