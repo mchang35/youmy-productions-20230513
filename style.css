@@ -205,18 +205,28 @@ p {
         width: 50%;
     }
     
-    /* .poster-watch-grid {
-        white-space: nowrap;
-    } */
+    .poster-watch-grid {
+        display: block;
+        border: 2px solid white; /* remove later */
+    }
 
     .poster-watch-grid div {
         /* inline-block ?*/
         /* display: inline;  */
-        display: inline-block;
+        /* display: inline-block; */
+        float: left;
         width: 50%;
         /* to remove later: */
-        border: 2px solid white;
+        /* border: 2px solid white; */
     }
+
+    /* #movie-poster-div {
+        float: left;
+    }
+
+    #movie-info {
+        display: inline-block;
+    } */
 
 }
 
