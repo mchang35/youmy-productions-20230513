@@ -40,6 +40,7 @@ Resources that may be useful:
  * [Overlay divs using CSS](https://www.tutorialrepublic.com/faq/how-to-overlay-one-div-over-another-div-using-css.php#:~:text=You%20can%20use%20the%20CSS,%2C%20fixed%20%2C%20or%20relative%20)
  * [Media Screen Sizing in CSS](https://stackoverflow.com/questions/13550541/media-min-width-max-width/13550716#13550716)
  * [Font Size - CSS](https://www.w3schools.com/css/css_font_size.asp)
+ * [Align div elements side by side - HTML and CSS](https://stackoverflow.com/questions/4938716/align-div-elements-side-by-side)
  * 
 
 Notes:
