@@ -52,13 +52,12 @@ body {
 
 .center {
     margin: auto;
-    /* width: 50%; */
     padding: 10px;
 }
 
-.content-container {
-    display: inline;
-}
+/* .content-container {
+    display: block;
+} */
 
 .social-media-banner {
     max-height: 50px;
@@ -95,6 +94,7 @@ p {
 
 .about-content p {
     width: 50%;
+    align-self: center;
 }
 
 .project-content {
@@ -107,6 +107,7 @@ p {
 
 .poster-watch-grid div {
     display: inline-block;
+    width: 90%;
 }
 
 @media only screen and (max-device-width: 480px) {
@@ -127,6 +128,11 @@ p {
     .logo-sw {
         width: 45%;
         height: auto;
+    }
+
+    .poster-watch-grid div {
+        display: block;
+        width: 90%;
     }
  }
 
