@@ -93,18 +93,42 @@ p {
     height: auto;
 }
 
+.about-content p {
+    width: 50%;
+}
+
+.project-content {
+    width: 75%;
+}
+
+.contact-content {
+    width: 50%;
+}
+
+.poster-watch-grid div {
+    display: inline-block;
+}
+
 @media only screen and (max-device-width: 480px) {
     /* styles for mobile browsers smaller than 480px; (iPhone) */
-    .about-content p {
+    .about-content {
+        width: 90%;
+        text-align: center;
+    }
+
+    .project-content {
         width: 90%;
     }
- }
 
-.about-content p {
-    @media only screen and (max-device-width: 480px) {
-    /* styles for mobile browsers smaller than 480px; (iPhone) */
+    .contact-content {
+        width: 90%;
     }
-}
+
+    .logo-sw {
+        width: 45%;
+        height: auto;
+    }
+ }
 
 /* Projects page */
 .movie-logo-w {
@@ -115,7 +139,7 @@ p {
 .movie-poster {
     max-width: 90%;
     height: auto;
-    display: inline;
+    /* display: inline; */
 }
 
 /* Projects page: Gallery */
@@ -198,6 +222,5 @@ p {
 }
 
 .contact-content p {
-    margin-bottom: 0px;
-    line-height: 10px;
+    margin-bottom: 5px;
 }
