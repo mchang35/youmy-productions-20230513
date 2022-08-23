@@ -36,13 +36,14 @@
     src: url('rustic-printed-9718688/Rustic Printed.ttf');
 }
 
-.absolute-position { /* might not use this */
+/* might not use this */
+/* .absolute-position { 
     position: absolute;
     top: 0;
     left: 0;
     z-index: 9;
     opacity: 0.99;
-}
+} */
 
 body {
     background-color: black;
@@ -59,10 +60,6 @@ body {
     display: block;
 } */
 
-.social-media-banner {
-    max-height: 50px;
-}
-
 img {
     object-fit: cover;
     margin: 3px;
@@ -78,7 +75,7 @@ p {
 .logo {
     margin-left: auto;
     margin-right: auto;
-    display: block; /* block */
+    display: block;
 }
 
 .logo-w {
@@ -86,32 +83,59 @@ p {
     height: auto;
 }
 
-/* about, projects, contact pages */
-.logo-sw {
-    width: 15%;
-    height: auto;
+@media screen and (min-width:481px) {
+    .social-media-banner {
+        max-height: 50px;
+    }
+    
+    .embedded-movie-description-grid p {
+        font-size: 40px;
+    }
+    
+    /* about, projects, contact pages */
+    .logo-sw {
+        width: 15%;
+        height: auto;
+    }
+    
+    .about-content p {
+        width: 50%;
+        align-self: center;
+    }
+    
+    .project-content {
+        width: 75%;
+    }
+    
+    .contact-content {
+        width: 50%;
+    }
+    
+    .poster-watch-grid {
+        white-space: nowrap;
+    }
+
+    .poster-watch-grid div {
+        /* inline-block ?*/
+        /* display: inline;  */
+        width: 90%;
+    }
 }
 
-.about-content p {
-    width: 50%;
-    align-self: center;
-}
 
-.project-content {
-    width: 75%;
-}
 
-.contact-content {
-    width: 50%;
-}
+/* @media only screen and (max-device-width: 480px) { */
 
-.poster-watch-grid div {
-    display: inline-block;
-    width: 90%;
-}
-
-@media only screen and (max-device-width: 480px) {
+@media only screen and (max-width: 480px) {
     /* styles for mobile browsers smaller than 480px; (iPhone) */
+    .social-media-banner {
+        max-height: 25px;
+    }
+
+    .embedded-movie-description-grid p {
+        font-size: 14px;
+    }
+
     .about-content {
         width: 90%;
         text-align: center;
@@ -149,6 +173,10 @@ p {
 }
 
 /* Projects page: Gallery */
+#selected-photo {
+    white-space: nowrap;
+}
+
 #selected-photo img {
     max-width: 90%;
     height: auto;
@@ -169,7 +197,7 @@ p {
     user-select: none;
     -webkit-user-select: none;
     text-decoration: none;
-    display: inline-block;
+    /* display: inline-block; */
 }
 
 .prev {
