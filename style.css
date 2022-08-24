@@ -255,6 +255,10 @@ p {
         margin: auto;
     }
 
+    .movie-poster-div {
+        margin: auto;
+    }
+
     .movie-poster {
         margin-left: auto;
         margin-right: auto;
