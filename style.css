@@ -56,6 +56,10 @@ p {
     font-family: rusticPrinted;
 }
 
+span.upper-case {
+    font-size:20px;
+}
+
 /* home page */
 .logo {
     margin-left: auto;
@@ -185,7 +189,7 @@ p {
     }
     
     .about-content p {
-        width: 50%;
+        width: 75%;
         align-self: center;
     }
     
