@@ -81,10 +81,6 @@ p {
 }
 
 /* Projects page: Gallery */
-#selected-photo {
-    white-space: nowrap;
-}
-
 #selected-photo img {
     height: auto;
     margin-left: auto;
@@ -207,32 +203,14 @@ p {
     
     .poster-watch-grid {
         display: block;
-        border: 2px solid white; /* remove later */
     }
 
     .poster-watch-grid div {
-        /* inline-block ?*/
-        /* display: inline;  */
-        /* display: inline-block; */
         float: left;
         width: 50%;
-        /* to remove later: */
-        /* border: 2px solid white; */
     }
-
-    /* #movie-poster-div {
-        float: left;
-    }
-
-    #movie-info {
-        display: inline-block;
-    } */
 
 }
-
-
-
-/* @media only screen and (max-device-width: 480px) { */
 
 @media only screen and (max-width: 820px) {
     .topnav a {
