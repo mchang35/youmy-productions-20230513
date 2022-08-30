@@ -1,7 +1,7 @@
 # youmy-productions
 GitHub repository for the Youmy Productions website. Youmy Productions is a film production organization founded by Alex Chang.
 
-## This website is accessible from youmyproductions.com.
+**This website is accessible from [youmyproductions.com](youmyproductions.com).**
 
 In order to see live updates when editing this website, type the following into a command line:
 ```
