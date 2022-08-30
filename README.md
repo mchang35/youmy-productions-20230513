@@ -46,6 +46,7 @@ Resources that may be useful:
  * [Force a div to appear below, not next to, another -- clear:both; (CSS)](https://stackoverflow.com/questions/2492873/how-to-force-div-to-appear-below-not-next-to-another)
  * [Convert casing of text](https://convertcase.net/)
  * [Putting a GitHub Pages site on a custom domain (GitHub documentation)](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site)
+ * [Hosting a GitHub Pages site on a Google Domains custom domain](https://medium.com/8px-magazine/hosting-a-website-for-free-get-started-with-google-domains-github-pages-980986550958)
 
 Notes:
  * Generally, it takes a while (at least 2-3 minutes) for the connection between the js file and the HTML file to work.
