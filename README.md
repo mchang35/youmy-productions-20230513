@@ -3,12 +3,24 @@ GitHub repository for the Youmy Productions website. Youmy Productions is a film
 
 **This website is accessible from [youmyproductions.com](youmyproductions.com).**
 
+## Viewing Edits in Live Time
 In order to see live updates when editing this website, type the following into a command line:
 ```
 python3.7 -m http.server 
 ``` 
 When prompted with this: `Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...`, copy and paste `http://0.0.0.0:8000/` into the browser and go to this page.
 
+## Custom Domain
+After purchasing the custom domain, go into the domain platform and add the following records:
+| Host name | Type | TTL | Data/Value |
+| --- | --- | --- | --- |
+| youmyproductions.com (don't add anything in front!) | A | 3600 (1 hour) | 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153 |
+| \_github-pages-challenge-mchang35.youmyproductions.com | TXT | 3600 (1 hour) | \<not shown here for security purposes\> | 
+| www.youmyproductions.com (add the www in the front!) | CNAME | 3600 (1 hour) | https://mchang35.github.io. |
+
+Additionally, follow instructions given on GitHub (in resources list below).
+
+## Helpful Resources
 Resources that may be useful: 
  * Resources related to Javascript:
     * [Javascript function syntax](https://www.w3schools.com/js/js_functions.asp)
@@ -31,6 +43,9 @@ Resources that may be useful:
  * Resources related to the font:
     * [Rustic Printed font](https://ifonts.xyz/downfile/0337d7e7841584aeb04f0315d74a5c0d.271867)
     * [Using downloaded fonts](https://www.w3schools.com/css/css3_fonts.asp)
+ * Resources related to custom domains: 
+    * [Putting a GitHub Pages site on a custom domain (GitHub documentation)](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site)
+    * [Hosting a GitHub Pages site on a Google Domains custom domain](https://medium.com/8px-magazine/hosting-a-website-for-free-get-started-with-google-domains-github-pages-980986550958)
  * [Bootstrap: Grid System](https://getbootstrap.com/docs/4.0/layout/grid/)
  * [Aligning an image to the right](https://www.delftstack.com/howto/css/css-align-image-right/#:~:text=Select%20the%20img%20tag%20in,the%20right%20of%20the%20webpage.)
  * [Link a phone number](https://www.gaintap.com/archives/clickable-website-phone-number-and-call-tracking-guide/)
@@ -45,8 +60,6 @@ Resources that may be useful:
  * [Align div elements side by side - HTML and CSS](https://stackoverflow.com/questions/4938716/align-div-elements-side-by-side)
  * [Force a div to appear below, not next to, another -- clear:both; (CSS)](https://stackoverflow.com/questions/2492873/how-to-force-div-to-appear-below-not-next-to-another)
  * [Convert casing of text](https://convertcase.net/)
- * [Putting a GitHub Pages site on a custom domain (GitHub documentation)](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site)
- * [Hosting a GitHub Pages site on a Google Domains custom domain](https://medium.com/8px-magazine/hosting-a-website-for-free-get-started-with-google-domains-github-pages-980986550958)
 
 Notes:
  * Generally, it takes a while (at least 2-3 minutes) for the connection between the js file and the HTML file to work.
