@@ -20,71 +20,18 @@
 </div>
 
 <div class="content-container w-100" id="content-container">
-    <br><br><br>
-    <img class="logo-sw logo" src="Images/logo.png">
+    <br>
+    <img class="logo-sw" src="Images/YoumyProductionsLogo.webp">
     <br>
     <br>
+    <h3>Projects</h3>
     <div class="project-content center">
-        <img class="movie-logo-w logo" src="Images/oakmanPizzaLogo.png">
-        <br>
-        <br>
-        <div class="poster-watch-grid center">
-            <div class="movie-poster-div">
-                <img class="movie-poster" src="Images/oakmanPizzaPoster.png">
-            </div><div class="movie-info">
-                <h4 style="text-align:center">WATCH FILM</h3>
-                <iframe class="w-100" width="700" height="394" id="oakman-pizza-embed" src="https://www.youtube.com/embed/EDGRI046adI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <p style="white-space:normal;">
-                    <span class="upper-case">'OAKMAN PIZZA'</span> 
-                    IS A HORROR COMEDY SHORT FILM WRITTEN AND DIRECTED
-                    BY <span class="upper-case">A</span>LEX 
-                    <span class="upper-case">C</span>HANG AND CASTED BY 
-                    <span class="upper-case">M</span>CKENNA 
-                    <span class="upper-case">C</span>RENSHAW THAT TELLS 
-                    THE STORY
-                    OF A PIZZA DELIVERY MAN WHO UNWILLINGLY STUMBLES 
-                    INTO A CULT
-                    MEETING. THE CAST AND CREW OF THIS FILM, SHOT 
-                    IN <span class="upper-case">S</span>AN 
-                    <span class="upper-case">M</span>ARCOS 
-                    <span class="upper-case">C</span>ALIFORNIA, 
-                    IS COMPRISED OF TALENTED STUDENTS ATTENDING 
-                    <span class="upper-case">M</span>ISSION
-                    <span class="upper-case">H</span>ILLS 
-                    <span class="upper-case">H</span>IGH 
-                    <span class="upper-case">S</span>CHOOL.
-                </p>
+        <div class="row">
+            <div class="col">
+                DORMS
             </div>
-        </div>
-
-        <div id="gallery w-100" style="clear:both;padding-top:50px;">
-            <h4 style="text-align:center;">GALLERY</h4>
-            <div id="selected-photo" >
-                <p style="margin-bottom:0px;">1 / 17</p>
-                <div style="white-space:nowrap;">
-                    <a class="prev" onclick="plusPhotoNum(-1);">&#10094;</a>
-                    <img src="Images/photo1.png">
-                    <a class="next" onclick="plusPhotoNum(1);">&#10095;</a>
-                </div>
-            </div>
-            <div class="center" id="photo-options">
-                <img id="photo1" class="selected" src="Images/photo1.png" onclick="selectPhoto('1');">
-                <img id="photo2" class="unselected" src="Images/photo2.png" onclick="selectPhoto('2');">
-                <img id="photo3" class="unselected" src="Images/photo3.png" onclick="selectPhoto('3');">
-                <img id="photo4" class="unselected" src="Images/photo4.png" onclick="selectPhoto('4');">
-                <img id="photo5" class="unselected" src="Images/photo5.png" onclick="selectPhoto('5');">
-                <img id="photo6" class="unselected" src="Images/photo6.png" onclick="selectPhoto('6');">
-                <img id="photo7" class="unselected" src="Images/photo7.png" onclick="selectPhoto('7');">
-                <img id="photo8" class="unselected" src="Images/photo8.png" onclick="selectPhoto('8');">
-                <img id="photo9" class="unselected" src="Images/photo9.png" onclick="selectPhoto('9');">
-                <img id="photo10" class="unselected" src="Images/photo10.png" onclick="selectPhoto('10');">
-                <img id="photo11" class="unselected" src="Images/photo11.png" onclick="selectPhoto('11');">
-                <img id="photo12" class="unselected" src="Images/photo12.png" onclick="selectPhoto('12');">
-                <img id="photo13" class="unselected" src="Images/photo13.png" onclick="selectPhoto('13');">
-                <img id="photo14" class="unselected" src="Images/photo14.png" onclick="selectPhoto('14');">
-                <img id="photo15" class="unselected" src="Images/photo15.png" onclick="selectPhoto('15');">
-                <img id="photo16" class="unselected" src="Images/photo16.png" onclick="selectPhoto('16');">
-                <img id="photo17" class="unselected" src="Images/photo17.png" onclick="selectPhoto('17');">
+            <div class="col">
+                WINTER
             </div>
         </div>
     </div>
@@ -94,125 +41,12 @@
 
 <div class="social-media-banner" id="social-media-banner">
     <a href="https://instagram.com/youmy.films?igshid=YmMyMTA2M2Y=">
-        <img class="h-100" src="Images/IGLogo.png" alt="IG">
+        <img class="h-100" src="Images/IGLogo.webp" alt="IG">
     </a>
 </div>
 
 </body>
 
 <script src="main.js"></script>
-
-<!-- <script>
-    var TOTAL_NUM_PICS = 17;
-
-    /*
-    getCurrentPhotoNum
-    parameters: none
-    returns: the number of the currently selected photo, as a STRING
-    */
-    function getCurrentPhotoNum() {
-        let selectedPhoto = document.getElementById("selected-photo").getElementsByTagName("img")[0];
-        let oldPhotoNum = selectedPhoto.src.slice(-6, -4);
-
-        // if the number is not double digits
-        if (oldPhotoNum.at(0).match(/[a-zA-Z]/)) {
-            oldPhotoNum = oldPhotoNum.slice(1);
-        }
-
-        return oldPhotoNum
-    }
-
-    /*
-    switchPhotos
-    Changes the interface look so that the newly selected photo replaces
-    the current photo as the selected photo on the screen.
-    parameters: 
-        - oldPhotoNum: the number of the currently selected photo, as a STRING
-        - newPhotoNum: the number of the new selected photo, as a STRING
-    returns: nothing
-    */
-    function switchPhotos(oldPhotoNum, newPhotoNum) {
-        newPhotoId = 'photo' + newPhotoNum;
-        let newPhoto = document.getElementById(newPhotoId);
-
-        // make the previously selected photo UNselected
-        let oldPhotoId = 'photo' + oldPhotoNum;
-    
-        let oldPhoto = document.getElementById(oldPhotoId);
-        oldPhoto.classList.remove("selected");
-        oldPhoto.classList.add("unselected");
-
-        // make the selected photo the big one
-        let selectedPhoto = document.getElementById("selected-photo");
-        selectedPhoto.getElementsByTagName("img")[0].src = newPhoto.src;
-
-        // change the label on the selected photo to be <new number> / <total # of pics>
-        selectedPhoto.getElementsByTagName("p")[0].innerText = newPhotoNum + ' / ' + String(TOTAL_NUM_PICS);
-
-        // change the class for new photo from unselected to selected
-        newPhoto.classList.remove("unselected");
-        newPhoto.classList.add("selected");
-    }
-
-    /*
-    selectPhoto
-    Executed when a user selects a photo manually from the scroll bar of
-    photos.
-    parameters:
-        - picNum: the number of the newly selected photo, as a STRING
-    returns: nothing
-    */
-    function selectPhoto(picNum) {
-        let oldPhotoNum = getCurrentPhotoNum();
-
-        switchPhotos(oldPhotoNum, picNum)
-    }
-
-    /*
-    scrollVisiblePhoto
-    Makes sure that the selected photo is visible in the gallery upon
-    selection/activation.
-    parameters: 
-        - picNum: the number of the photo we want to be visible in the
-        gallery, as a STRING
-    returns: nothing
-    */
-    function scrollVisiblePhoto(picNum) {
-        let currImage = document.getElementById("photo" + picNum);
-        currImage.scrollIntoView({behavior: "smooth"});
-    }
-
-    /*
-    plusPhotoNum
-    Executed when a user presses either the next or the previous button.
-    parameters: 
-        - change: an INT representing the change of photo number from the
-        currently selected photo number (usually -1 or 1)
-    returns: nothing
-    */
-    function plusPhotoNum(change) {
-        // get id of current photo
-        let oldPhotoNum = getCurrentPhotoNum();
-
-        // get id of next or previous (new) photo
-        let newPhotoNum = parseInt(oldPhotoNum) + change;
-        
-        if (newPhotoNum > TOTAL_NUM_PICS) {
-            newPhotoNum = 1;
-        } else if (newPhotoNum < 1) {
-            newPhotoNum = TOTAL_NUM_PICS;
-        }
-
-        let newPhotoNumStr = String(newPhotoNum);
-
-        // change/update the photos
-        switchPhotos(oldPhotoNum, newPhotoNumStr);
-
-        // make sure the selected photo is visible in the
-        // scrollable gallery
-        scrollVisiblePhoto(newPhotoNumStr);
-
-    }
-</script> -->
 
 </html>

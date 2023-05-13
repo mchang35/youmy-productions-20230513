@@ -72,6 +72,17 @@ span.upper-case {
     height: auto;
 }
 
+/* About page */
+hr {
+    width: 80%;
+    color: white;
+    size: 55px;
+} /* seems like this doesn't work?? */
+
+.about-content p {
+    text-align: justify;
+}
+
 /* Projects page */
 .movie-logo-w {
     max-width: 80%;
@@ -186,6 +197,7 @@ span.upper-case {
     .logo-sw {
         width: 15%;
         height: auto;
+        left: 5%;
     }
     
     .about-content p {

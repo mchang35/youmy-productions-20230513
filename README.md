@@ -60,6 +60,7 @@ Resources that may be useful:
  * [Align div elements side by side - HTML and CSS](https://stackoverflow.com/questions/4938716/align-div-elements-side-by-side)
  * [Force a div to appear below, not next to, another -- clear:both; (CSS)](https://stackoverflow.com/questions/2492873/how-to-force-div-to-appear-below-not-next-to-another)
  * [Convert casing of text](https://convertcase.net/)
+ * [Duplicate a GitHub Repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/duplicating-a-repository)
 
 Notes:
  * Generally, it takes a while (at least 2-3 minutes) for the connection between the js file and the HTML file to work.
