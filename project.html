@@ -14,7 +14,7 @@
 
 <div class="content-container w-100" id="content-container">
     <div class="head-background w-100">
-        <img class="center" src="Images/aboutPagePhoto.webp">
+        <img id="movie-photo" class="center" src="Images/aboutPagePhoto.webp">
         <img class="logo-sw" src="Images/YoumyProductionsLogo.webp" onclick="goTo('index.html');">
         <div class="topnav">
             <a href="index.html">HOME</a>
@@ -28,7 +28,7 @@
     <div class="project-content center">
         <div class="poster-watch-grid center row">
             <div class="col">
-                <div id="movie-player"></div>
+                <iframe id="movie-player" class="w-100" height="700" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 <div class="row">
                     <div class="col">
                         <p id="movie-name" style="text-align:left"></p>
@@ -57,7 +57,7 @@
                 </div>
             </div>
             <div class="center" id="photo-options">
-                <img id="photo1" class="selected" src="Images/photo1.png" onclick="selectPhoto('1');">
+                <!-- <img id="photo1" class="selected" src="Images/photo1.png" onclick="selectPhoto('1');">
                 <img id="photo2" class="unselected" src="Images/photo2.png" onclick="selectPhoto('2');">
                 <img id="photo3" class="unselected" src="Images/photo3.png" onclick="selectPhoto('3');">
                 <img id="photo4" class="unselected" src="Images/photo4.png" onclick="selectPhoto('4');">
@@ -73,7 +73,7 @@
                 <img id="photo14" class="unselected" src="Images/photo14.png" onclick="selectPhoto('14');">
                 <img id="photo15" class="unselected" src="Images/photo15.png" onclick="selectPhoto('15');">
                 <img id="photo16" class="unselected" src="Images/photo16.png" onclick="selectPhoto('16');">
-                <img id="photo17" class="unselected" src="Images/photo17.png" onclick="selectPhoto('17');">
+                <img id="photo17" class="unselected" src="Images/photo17.png" onclick="selectPhoto('17');"> -->
             </div>
         </div>
     </div>

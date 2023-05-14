@@ -127,11 +127,35 @@ function clickProject(projectName) {
     window.location.href = newURL;
 }
 
-function loadProject() {
+async function loadProject() {
+    let projects = await (await fetch('movies.json')).json();
+
     // get project name from URL
-    let url = newURL(window.location);
+    let url = new URL(window.location);
     let searchParams = url.searchParams;
     let projectName = searchParams.get('projectName');
 
     console.log(projectName);
+
+    let selectedMovie = projects[projectName];
+
+    let moviePhotoImg = document.getElementById("movie-photo");
+    let moviePlayerIframe = document.getElementById("movie-player");
+    let movieNameP = document.getElementById("movie-name");
+    let movieYearP = document.getElementById("movie-year");
+    let movieDescDiv = document.getElementById("movie-desc");
+    let moviePosterImg = document.getElementById("movie-poster");
+
+    moviePhotoImg.src = selectedMovie.photo;
+    moviePlayerIframe.src = selectedMovie.iframe.src;
+    movieNameP.innerHTML = selectedMovie.name;
+    movieYearP.innerHTML = selectedMovie.year;
+    
+    for (let i in selectedMovie.description) {
+        let par = document.createElement("p");
+        par.innerHTML = selectedMovie.description[i];
+        movieDescDiv.appendChild(par);
+    }
+
+    moviePosterImg.src = selectedMovie.poster;
 }
