@@ -60,6 +60,21 @@ span.upper-case {
     font-size:20px;
 }
 
+.head-background {
+    z-index: 0;
+    top: 0;
+    /* background-image: url('Images/aboutPagePhoto.webp');
+    background-size: contain; */
+    position: relative;
+}
+
+.head-background img {
+    object-fit: contain;
+    max-width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* home page */
 .logo {
     margin-left: auto;
@@ -84,15 +99,14 @@ hr {
 }
 
 /* Projects page */
-.movie-logo-w {
-    max-width: 80%;
-    height: auto;
-}
-
 .movie-poster {
-    max-width: 90%;
+    max-width: 100%;
     height: auto;
     margin: auto;
+}
+
+.movie-content {
+    padding: 50px;
 }
 
 /* Projects page: Gallery */
@@ -198,6 +212,8 @@ hr {
         width: 15%;
         height: auto;
         left: 5%;
+        top: 5%;
+        position: absolute;
     }
     
     .about-content p {
