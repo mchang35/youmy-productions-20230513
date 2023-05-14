@@ -10,51 +10,40 @@
     <script src="bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
 </head>
 
-<body>
-
-<div class="topnav">
-    <a href="index.html">HOME</a>
-    <a href="about.html">ABOUT</a>
-    <a class="active" href="projects.html">PROJECTS</a>
-    <a href="contact.html">CONTACT</a>
-</div>
+<body onload="loadProject();">
 
 <div class="content-container w-100" id="content-container">
-    <br>
-    <img class="logo-sw" src="Images/YoumyProductionsLogo.webp">
+    <div class="head-background w-100">
+        <img class="center" src="Images/aboutPagePhoto.webp">
+        <img class="logo-sw" src="Images/YoumyProductionsLogo.webp" onclick="goTo('index.html');">
+        <div class="topnav">
+            <a href="index.html">HOME</a>
+            <a href="about.html">ABOUT</a>
+            <a class="active" href="projects.html">PROJECTS</a>
+            <a href="contact.html">CONTACT</a>
+        </div>
+    </div>
     <br>
     <br>
     <div class="project-content center">
-        <img class="movie-logo-w logo" src="Images/oakmanPizzaLogo.png">
-        <br>
-        <br>
-        <div class="poster-watch-grid center">
-            <div class="movie-poster-div">
-                <img class="movie-poster" src="Images/oakmanPizzaPoster.png">
-            </div><div class="movie-info">
-                <h4 style="text-align:center">WATCH FILM</h3>
-                <iframe class="w-100" width="700" height="394" id="oakman-pizza-embed" src="https://www.youtube.com/embed/EDGRI046adI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <p style="white-space:normal;">
-                    <span class="upper-case">'OAKMAN PIZZA'</span> 
-                    IS A HORROR COMEDY SHORT FILM WRITTEN AND DIRECTED
-                    BY <span class="upper-case">A</span>LEX 
-                    <span class="upper-case">C</span>HANG AND CASTED BY 
-                    <span class="upper-case">M</span>CKENNA 
-                    <span class="upper-case">C</span>RENSHAW THAT TELLS 
-                    THE STORY
-                    OF A PIZZA DELIVERY MAN WHO UNWILLINGLY STUMBLES 
-                    INTO A CULT
-                    MEETING. THE CAST AND CREW OF THIS FILM, SHOT 
-                    IN <span class="upper-case">S</span>AN 
-                    <span class="upper-case">M</span>ARCOS 
-                    <span class="upper-case">C</span>ALIFORNIA, 
-                    IS COMPRISED OF TALENTED STUDENTS ATTENDING 
-                    <span class="upper-case">M</span>ISSION
-                    <span class="upper-case">H</span>ILLS 
-                    <span class="upper-case">H</span>IGH 
-                    <span class="upper-case">S</span>CHOOL.
-                </p>
+        <div class="poster-watch-grid center row">
+            <div class="col">
+                <div id="movie-player"></div>
+                <div class="row">
+                    <div class="col">
+                        <p id="movie-name" style="text-align:left"></p>
+                    </div>
+                    <div class="col">
+                        <p style="text-align:center">WATCH NOW</p>
+                    </div>
+                    <div class="col">
+                        <p id="movie-year" style="text-align:right"></p>
+                    </div>
+                </div>
+                <div style="text-align:justify" id="movie-desc"></div>
             </div>
+            <div class=" col movie-poster-div">
+                <img class="movie-poster" id="movie-poster">
         </div>
 
         <div id="gallery w-100" style="clear:both;padding-top:50px;">

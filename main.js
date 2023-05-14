@@ -108,3 +108,30 @@ function plusPhotoNum(change) {
     scrollVisiblePhoto(newPhotoNumStr);
 
 }
+
+/*---------------------------------------------------------*/
+
+function goTo(dest) {
+    window.location.href = dest;
+}
+
+function clickProject(projectName) {
+    let url = new URL(window.location);
+    let searchParams = url.searchParams;
+
+    searchParams.delete('projectName');
+    searchParams.set('projectName', projectName);
+    url.search = searchParams.toString();
+    let newURL = url.toString();
+    newURL = newURL.replace('projects.html', 'project.html');
+    window.location.href = newURL;
+}
+
+function loadProject() {
+    // get project name from URL
+    let url = newURL(window.location);
+    let searchParams = url.searchParams;
+    let projectName = searchParams.get('projectName');
+
+    console.log(projectName);
+}
