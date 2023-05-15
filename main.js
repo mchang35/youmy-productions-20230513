@@ -130,7 +130,6 @@ function clickProject(projectName) {
 async function loadProject() {
     let projects = await (await fetch('movies.json')).json();
 
-    // get project name from URL
     let url = new URL(window.location);
     let searchParams = url.searchParams;
     let projectName = searchParams.get('projectName');
@@ -153,6 +152,7 @@ async function loadProject() {
     
     for (let i in selectedMovie.description) {
         let par = document.createElement("p");
+        par.style.textAlign = "justify";
         par.innerHTML = selectedMovie.description[i];
         movieDescDiv.appendChild(par);
     }

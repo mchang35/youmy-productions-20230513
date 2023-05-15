@@ -8,8 +8,10 @@
     padding-top: 10px;
     padding-right: 10px;
     font-family: rusticPrinted;
-    /* z-index: 9; */
-    /* position: absolute; */
+    z-index: 9;
+    position: absolute;
+    left: auto;
+    right: 0;
 }
   
 .topnav a {
@@ -63,8 +65,13 @@ span.upper-case {
 .head-background {
     z-index: 0;
     top: 0;
+    /* left: 0;
+    right: 0;
+    width: 100%; */
     /* background-image: url('Images/aboutPagePhoto.webp');
-    background-size: contain; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; */
     position: relative;
     margin-left: 0;
     margin-right: 0;
@@ -72,9 +79,10 @@ span.upper-case {
 
 .head-background img {
     object-fit: contain;
-    max-width: 75%;
-    margin-left: 0;
-    margin-right: 0;
+    max-width: 100%;
+    left: 0;
+    right: 0;
+    /* position: absolute; */
 }
 
 /* home page */

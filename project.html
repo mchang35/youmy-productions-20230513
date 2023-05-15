@@ -15,7 +15,9 @@
 <div class="content-container w-100" id="content-container">
     <div class="head-background w-100">
         <img id="movie-photo" class="center" src="Images/aboutPagePhoto.webp">
-        <img class="logo-sw" src="Images/YoumyProductionsLogo.webp" onclick="goTo('index.html');">
+        <a href="index.html">
+            <img class="logo-sw" src="Images/YoumyProductionsLogo.webp">
+        </a>
         <div class="topnav">
             <a href="index.html">HOME</a>
             <a href="about.html">ABOUT</a>
@@ -28,7 +30,7 @@
     <div class="project-content center">
         <div class="poster-watch-grid center row">
             <div class="col">
-                <iframe id="movie-player" class="w-100" height="700" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe id="movie-player" class="w-100" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 <div class="row">
                     <div class="col">
                         <p id="movie-name" style="text-align:left"></p>
@@ -40,10 +42,12 @@
                         <p id="movie-year" style="text-align:right"></p>
                     </div>
                 </div>
+                <br>
                 <div style="text-align:justify" id="movie-desc"></div>
             </div>
             <div class=" col movie-poster-div">
                 <img class="movie-poster" id="movie-poster">
+            </div>
         </div>
 
         <div id="gallery w-100" style="clear:both;padding-top:50px;">
@@ -82,7 +86,7 @@
 </div>
 
 <div class="social-media-banner" id="social-media-banner">
-    <a href="https://instagram.com/youmy.films?igshid=YmMyMTA2M2Y=">
+    <a href="https://instagram.com/youmyfilms?igshid=NTc4MTIwNjQ2YQ==">
         <img class="h-100" src="Images/IGLogo.webp" alt="IG">
     </a>
 </div>
