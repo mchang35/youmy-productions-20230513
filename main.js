@@ -135,14 +135,41 @@ async function loadProject() {
     let selectedMovie = projects[projectName];
 
     let moviePhotoImg = document.getElementById("movie-photo");
-    let moviePlayerIframe = document.getElementById("movie-player");
+    let moviePlayerDiv = document.getElementById("movie-player");
     let movieNameP = document.getElementById("movie-name");
     let movieYearP = document.getElementById("movie-year");
     let movieDescDiv = document.getElementById("movie-desc");
     let moviePosterImg = document.getElementById("movie-poster");
 
     moviePhotoImg.src = selectedMovie.photo;
-    moviePlayerIframe.src = selectedMovie.iframe.src;
+
+    let moviePlayerData = selectedMovie.movieplayer;
+    if ("thumbnail" in moviePlayerData) {
+        let thumbnailImg = document.createElement("img");
+        thumbnailImg.setAttribute("id","movie-player-thumbnail");
+        // let thumbnailImg = document.getElementById("movie-player-iframe");
+        thumbnailImg.src = moviePlayerData.thumbnail;
+        let linkA = document.createElement("a");
+        // let linkA = document.getElementById("movie-player-link");
+        linkA.href = moviePlayerData.link;
+        // linkA.classList.remove("invisible");
+        // thumbnailImg.classList.remove("invisible");
+        linkA.appendChild(thumbnailImg);
+        moviePlayerDiv.appendChild(linkA);
+
+    } else {
+        let iframe = document.createElement("iframe");
+        iframe.classList.add("w-100");
+        iframe.classList.add("h-75");
+        iframe.setAttribute("frameborder","0");
+        iframe.setAttribute("allow","accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share");
+        iframe.setAttribute("allowfullscreen","true");
+        // let iframe = document.getElementById("movie-player-iframe");
+        iframe.src = moviePlayerData.iframesrc;
+        // iframe.classList.remove("invisible");
+        moviePlayerDiv.appendChild(iframe);
+    }
+    
     movieNameP.innerHTML = selectedMovie.name;
     movieYearP.innerHTML = selectedMovie.year;
     

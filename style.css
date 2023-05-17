@@ -85,6 +85,10 @@ span.upper-case {
     /* position: absolute; */
 }
 
+.invisible {
+    display: none;
+}
+
 /* home page */
 .logo {
     margin-left: auto;
@@ -126,6 +130,11 @@ hr {
 
 .movie-content {
     padding: 50px;
+}
+
+#movie-player-thumbnail {
+    object-fit: contain;
+    max-width: 100%;
 }
 
 /* Projects page: Gallery */

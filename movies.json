@@ -8,8 +8,8 @@
                 "A PAIR OF COLLEGE FRESHMEN ARE MET WITH A GHOSTLY ADVERSARY AFTER BARGAINING WITH AN ECCENTRIC DRUG DEALER.",
                 "'DORMS' IS A HORROR COMEDY SHOT IN BERKELEY CALIFORNIA. WRITER/DIRECTOR AND CURRENT UC BERKELEY STUDENT, ALEX CHANG, PERSONIFIES ACADEMIC ANXIETIES INTO A SLASHER VILLAIN IN THIS COLORFUL PSYCHEDELIC INDUCED ODYSSEY."
             ],
-            "iframe": {
-                "src": "https://www.youtube.com/embed/IvWtwWIEA14"
+            "movieplayer": {
+                "iframesrc": "https://www.youtube.com/embed/IvWtwWIEA14"
             }
         },
     "winter":
@@ -22,8 +22,9 @@
                 "IN A POST APOCALYPTIC FUTURE, AN EX SCIENTIST RELIVES THE MEMORIES OF HIS DEAD LOVED ONES.",
                 "'WINTER' IS A SILENT SCI-FI DRAMA SHOT IN VARIOUS LOCATIONS IN THE UNITED STATES. WRITER/DIRECTOR, ALEX CHANG, CAPTURES MEMORIES IN A FILMIC STYLE IN THIS AMBIENT AND PERSONAL TALE."
             ],
-            "iframe": {
-                "src": "https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2F100013298792799%2Fvideos%2F3393971987509108%2F"
+            "movieplayer": {
+                "thumbnail": "Images/WinterThumbnail.webp",
+                "link": "https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2F100013298792799%2Fvideos%2F3393971987509108%2F"
             }
         }
 }
