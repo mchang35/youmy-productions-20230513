@@ -111,10 +111,6 @@ function plusPhotoNum(change) {
 
 /*---------------------------------------------------------*/
 
-function goTo(dest) {
-    window.location.href = dest;
-}
-
 function clickProject(projectName) {
     let url = new URL(window.location);
     let searchParams = url.searchParams;
