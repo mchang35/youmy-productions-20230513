@@ -10,11 +10,11 @@ function getCurrentPhotoNum() {
     let oldPhotoNum = selectedPhoto.src.slice(-7, -5);
 
     // if the number is not double digits
-    if (oldPhotoNum.at(0).match(/[a-zA-Z]/)) {
+    if (oldPhotoNum.at(0).match("/")) {
         oldPhotoNum = oldPhotoNum.slice(1);
     }
 
-    return oldPhotoNum
+    return oldPhotoNum;
 }
 
 /*
@@ -42,7 +42,8 @@ function switchPhotos(oldPhotoNum, newPhotoNum) {
     selectedPhoto.getElementsByTagName("img")[0].src = newPhoto.src;
 
     // change the label on the selected photo to be <new number> / <total # of pics>
-    selectedPhoto.getElementsByTagName("p")[0].innerText = newPhotoNum + ' / ' + String(TOTAL_NUM_PICS);
+    // selectedPhoto.getElementsByTagName("p")[0].innerText = newPhotoNum + ' / ' + String(TOTAL_NUM_PICS);
+    document.getElementById("selected-pic-num").innerHTML = newPhotoNum;
 
     // change the class for new photo from unselected to selected
     newPhoto.classList.remove("unselected");
@@ -130,8 +131,6 @@ async function loadProject() {
     let searchParams = url.searchParams;
     let projectName = searchParams.get('projectName');
 
-    console.log(projectName);
-
     let selectedMovie = projects[projectName];
 
     let moviePhotoImg = document.getElementById("movie-photo");
@@ -140,7 +139,9 @@ async function loadProject() {
     let movieYearP = document.getElementById("movie-year");
     let movieDescDiv = document.getElementById("movie-desc");
     let moviePosterImg = document.getElementById("movie-poster");
+    let movieSelectedPhoto = document.getElementById("selected-photo");
     let moviePhotoOptions = document.getElementById("photo-options");
+    let movieNumPics = document.getElementById("num-pics");
 
     moviePhotoImg.src = selectedMovie.photo;
 
@@ -183,19 +184,26 @@ async function loadProject() {
 
     moviePosterImg.src = selectedMovie.poster;
 
-    // setting up the gallery
-    let TOTAL_NUM_PICS = selectedMovie.num_imgs;
     let photoDir = selectedMovie.gallery_path;
+
+    // setting up the selected photo
+    let selectedImg = movieSelectedPhoto.getElementsByTagName("img")[0];
+    selectedImg.setAttribute("src","Images/" + photoDir + "/1.webp");
+
+    // setting up the gallery
+    TOTAL_NUM_PICS = selectedMovie.num_imgs;
+    movieNumPics.innerHTML = String(TOTAL_NUM_PICS);
     for (let i = 0; i < TOTAL_NUM_PICS; i++) {
         let img = document.createElement("img");
         let id = "photo" + String(i + 1);
         img.setAttribute("id", id);
         if (i == 0) {
             img.classList.add("selected");
+        } else {
+            img.classList.add("unselected");
         }
-        img.classList.add("unselected");
-        img.setAttribute("src", photoDir + "/" + String(i + 1) + ".webp");
-        img.onclick("selectPhoto('" + str(i + 1) + "');");
+        img.setAttribute("src", "Images/" + photoDir + "/" + String(i + 1) + ".webp");
+        img.setAttribute("onclick", "selectPhoto('" + String(i + 1) + "');");
 
         moviePhotoOptions.appendChild(img);
     }
