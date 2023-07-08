@@ -188,13 +188,13 @@ async function loadProject() {
     let photoDir = selectedMovie.gallery_path;
     for (let i = 0; i < TOTAL_NUM_PICS; i++) {
         let img = document.createElement("img");
-        let id = "photo" + str(i + 1);
+        let id = "photo" + String(i + 1);
         img.setAttribute("id", id);
         if (i == 0) {
             img.classList.add("selected");
         }
         img.classList.add("unselected");
-        img.setAttribute("src", photoDir + "/" + str(i + 1) + ".webp");
+        img.setAttribute("src", photoDir + "/" + String(i + 1) + ".webp");
         img.onclick("selectPhoto('" + str(i + 1) + "');");
 
         moviePhotoOptions.appendChild(img);
