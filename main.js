@@ -1,4 +1,4 @@
-var TOTAL_NUM_PICS = 17;
+var TOTAL_NUM_PICS;
 
 /*
 getCurrentPhotoNum
@@ -7,7 +7,7 @@ returns: the number of the currently selected photo, as a STRING
 */
 function getCurrentPhotoNum() {
     let selectedPhoto = document.getElementById("selected-photo").getElementsByTagName("img")[0];
-    let oldPhotoNum = selectedPhoto.src.slice(-6, -4);
+    let oldPhotoNum = selectedPhoto.src.slice(-7, -5);
 
     // if the number is not double digits
     if (oldPhotoNum.at(0).match(/[a-zA-Z]/)) {
@@ -140,6 +140,7 @@ async function loadProject() {
     let movieYearP = document.getElementById("movie-year");
     let movieDescDiv = document.getElementById("movie-desc");
     let moviePosterImg = document.getElementById("movie-poster");
+    let moviePhotoOptions = document.getElementById("photo-options");
 
     moviePhotoImg.src = selectedMovie.photo;
 
@@ -181,4 +182,21 @@ async function loadProject() {
     }
 
     moviePosterImg.src = selectedMovie.poster;
+
+    // setting up the gallery
+    let TOTAL_NUM_PICS = selectedMovie.num_imgs;
+    let photoDir = selectedMovie.gallery_path;
+    for (let i = 0; i < TOTAL_NUM_PICS; i++) {
+        let img = document.createElement("img");
+        let id = "photo" + str(i + 1);
+        img.setAttribute("id", id);
+        if (i == 0) {
+            img.classList.add("selected");
+        }
+        img.classList.add("unselected");
+        img.setAttribute("src", photoDir + "/" + str(i + 1) + ".webp");
+        img.onclick("selectPhoto('" + str(i + 1) + "');");
+
+        moviePhotoOptions.appendChild(img);
+    }
 }

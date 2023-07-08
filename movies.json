@@ -10,7 +10,9 @@
             ],
             "movieplayer": {
                 "iframesrc": "https://www.youtube.com/embed/IvWtwWIEA14"
-            }
+            },
+            "gallery_path": "dorms",
+            "num_imgs": 26
         },
     "winter":
         {
@@ -25,6 +27,8 @@
             "movieplayer": {
                 "thumbnail": "Images/WinterThumbnail.webp",
                 "link": "https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2F100013298792799%2Fvideos%2F3393971987509108%2F"
-            }
+            },
+            "gallery_path": "winter",
+            "num_imgs": 14
         }
 }
