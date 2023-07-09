@@ -128,28 +128,39 @@ function clickProject(projectName) {
     window.location.href = newURL;
 }
 
-async function loadProject() {
-    let projects = await (await fetch('movies.json')).json();
+function constructDescription(movieDescription, outerDiv) {
+    let movieDescDiv = document.createElement("div");
+    movieDescDiv.setAttribute("id","movie-desc");
+    movieDescDiv.style.textAlign = "justify";
+    for (let i in movieDescription) {
+        let par = document.createElement("p");
+        par.style.textAlign = "justify";
+        par.innerHTML = movieDescription[i];
+        movieDescDiv.appendChild(par);
+    }
 
-    let url = new URL(window.location);
-    let searchParams = url.searchParams;
-    let projectName = searchParams.get('projectName');
+    outerDiv.append(movieDescDiv);
+}
 
-    let selectedMovie = projects[projectName];
+function constructMoviePoster(isDesktop, moviePosterPath, outerDiv) {
+    let moviePosterDiv = document.createElement("div");
+    if (isDesktop) {
+        moviePosterDiv.classList.add("col");
+    }
+    moviePosterDiv.classList.add("movie-poster-div");
 
-    let moviePhotoImg = document.getElementById("movie-photo");
-    let moviePlayerDiv = document.getElementById("movie-player");
-    let movieNameP = document.getElementById("movie-name");
-    let movieYearP = document.getElementById("movie-year");
-    let movieDescDiv = document.getElementById("movie-desc");
-    let moviePosterImg = document.getElementById("movie-poster");
-    let movieSelectedPhoto = document.getElementById("selected-photo");
-    let moviePhotoOptions = document.getElementById("photo-options");
-    let movieNumPics = document.getElementById("num-pics");
+    let posterImg = document.createElement("img");
+    posterImg.classList.add("movie-poster");
+    posterImg.setAttribute("id","movie-poster");
+    posterImg.setAttribute("src", moviePosterPath);
+    moviePosterDiv.appendChild(posterImg);
 
-    moviePhotoImg.src = selectedMovie.photo;
+    outerDiv.appendChild(moviePosterDiv);
+}
 
-    let moviePlayerData = selectedMovie.movieplayer;
+function constructMoviePlayer(moviePlayerData, movieName, movieYear, outerDiv) {
+    let moviePlayerDiv = document.createElement("div");
+    moviePlayerDiv.setAttribute("id", "movie-player");
     if ("thumbnail" in moviePlayerData) {
         let thumbnailImg = document.createElement("img");
         thumbnailImg.setAttribute("id","movie-player-thumbnail");
@@ -169,16 +180,93 @@ async function loadProject() {
         iframe.src = moviePlayerData.iframesrc;
         moviePlayerDiv.appendChild(iframe);
     }
-    
-    movieNameP.innerHTML = selectedMovie.name;
-    movieYearP.innerHTML = selectedMovie.year;
-    
-    for (let i in selectedMovie.description) {
-        let par = document.createElement("p");
-        par.style.textAlign = "justify";
-        par.innerHTML = selectedMovie.description[i];
-        movieDescDiv.appendChild(par);
+
+    console.log("outer div: " + outerDiv);
+    outerDiv.appendChild(moviePlayerDiv);
+
+    let nameYearRow = document.createElement("div");
+    nameYearRow.classList.add("row");
+    let nameCol = document.createElement("div");
+    nameCol.classList.add("col");
+    let movieNameP = document.createElement("p");
+    movieNameP.setAttribute("id", "movie-name");
+    movieNameP.style.textAlign = "left";
+    movieNameP.innerHTML = movieName;
+    nameCol.appendChild(movieNameP);
+    nameYearRow.appendChild(nameCol);
+
+    let watchNowCol = document.createElement("div");
+    watchNowCol.classList.add("col");
+    let watchNowP = document.createElement("p");
+    watchNowP.style.textAlign = "center";
+    watchNowP.innerHTML = "WATCH NOW";
+    watchNowCol.appendChild(watchNowP);
+    nameYearRow.appendChild(watchNowCol);
+
+    let yearCol = document.createElement("div");
+    yearCol.classList.add("col");
+    let movieYearP = document.createElement("p");
+    movieYearP.setAttribute("id", "movie-year");
+    movieYearP.style.textAlign = "right";
+    movieYearP.innerHTML = movieYear;
+    yearCol.appendChild(movieYearP);
+    nameYearRow.appendChild(yearCol);
+
+    outerDiv.append(nameYearRow);
+
+}
+
+async function loadProject() {
+    let projects = await (await fetch('movies.json')).json();
+
+    let url = new URL(window.location);
+    let searchParams = url.searchParams;
+    let projectName = searchParams.get('projectName');
+
+    let selectedMovie = projects[projectName];
+
+    let moviePlayerData = selectedMovie.movieplayer;
+    let movieName = selectedMovie.name;
+    let movieYear = selectedMovie.year;
+    let movieDesc = selectedMovie.description;
+    let moviePosterPath = selectedMovie.poster;
+
+    let projectContentDiv = document.getElementById("project-content");
+
+    if (SCREEN_WIDTH > MOBILE_SIZE) {
+        let row = document.createElement("div");
+        row.classList.add("row");
+        
+        let playerDescCol = document.createElement("div");
+        playerDescCol.classList.add("col");
+        constructMoviePlayer(moviePlayerData, movieName, movieYear, playerDescCol);
+        
+        playerDescCol.appendChild(document.createElement("br"));
+        
+        constructDescription(movieDesc, playerDescCol);
+
+        row.appendChild(playerDescCol);
+
+        constructMoviePoster(true, moviePosterPath, row);
+
+        projectContentDiv.appendChild(row);
+    } else {
+        constructMoviePlayer(moviePlayerData, movieName, movieYear, projectContentDiv);
+        constructMoviePoster(false, moviePosterPath, projectContentDiv);
+        constructDescription(movieDesc, projectContentDiv);
     }
+
+    let moviePhotoImg = document.getElementById("movie-photo");
+    let moviePlayerDiv = document.getElementById("movie-player");
+    let movieNameP = document.getElementById("movie-name");
+    let movieYearP = document.getElementById("movie-year");
+    let movieDescDiv = document.getElementById("movie-desc");
+    let moviePosterImg = document.getElementById("movie-poster");
+    let movieSelectedPhoto = document.getElementById("selected-photo");
+    let moviePhotoOptions = document.getElementById("photo-options");
+    let movieNumPics = document.getElementById("num-pics");
+
+    moviePhotoImg.src = selectedMovie.photo;
 
     moviePosterImg.src = selectedMovie.poster;
 
@@ -237,11 +325,16 @@ function remainingContentTop(page) {
             topMargin = topMargin - 120;
         } else if (page == 'contact') {
             topMargin = topMargin - 50;
+        } else if (page == 'project') {
+            topMargin = topMargin + 20;
         }
     }
     
     document.getElementsByClassName("remaining-content")[0].style.top = String(topMargin) + "px";
 }
+
+/*-------------------------------------------------------------*/
+// projects page
 
 function constructProject(isDesktop, posterPath, movieName, year, outerDiv) {
     let col = document.createElement("div");
@@ -279,7 +372,6 @@ function constructProject(isDesktop, posterPath, movieName, year, outerDiv) {
     col.appendChild(nameYearRow);
 }
 
-// projects page
 async function loadProjects() {
     let projects = await (await fetch('movies.json')).json();
 
@@ -293,16 +385,20 @@ async function loadProjects() {
         let count = 0;
         let row;
         for (let project in projects) {
-            let posterPath = project.poster;
-            let movieName = project.name;
-            let year = project.year;
+            let posterPath = projects[project].poster;
+            let movieName = projects[project].name;
+            let year = projects[project].year;
             if (count % 2 == 0) {
-                projectContentDiv.appendChild(row);
+                if (count > 0) {
+                    projectContentDiv.appendChild(row);
+                }
                 row = document.createElement("div");
                 row.classList.add("row");
             }
             constructProject(true, posterPath, movieName, year, row);
+            count++;
         }
+        projectContentDiv.appendChild(row);
     } else {
         console.log("mobile screen");
         for (let project in projects) {
