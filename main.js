@@ -149,13 +149,9 @@ async function loadProject() {
     if ("thumbnail" in moviePlayerData) {
         let thumbnailImg = document.createElement("img");
         thumbnailImg.setAttribute("id","movie-player-thumbnail");
-        // let thumbnailImg = document.getElementById("movie-player-iframe");
         thumbnailImg.src = moviePlayerData.thumbnail;
         let linkA = document.createElement("a");
-        // let linkA = document.getElementById("movie-player-link");
         linkA.href = moviePlayerData.link;
-        // linkA.classList.remove("invisible");
-        // thumbnailImg.classList.remove("invisible");
         linkA.appendChild(thumbnailImg);
         moviePlayerDiv.appendChild(linkA);
 
@@ -166,9 +162,7 @@ async function loadProject() {
         iframe.setAttribute("frameborder","0");
         iframe.setAttribute("allow","accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share");
         iframe.setAttribute("allowfullscreen","true");
-        // let iframe = document.getElementById("movie-player-iframe");
         iframe.src = moviePlayerData.iframesrc;
-        // iframe.classList.remove("invisible");
         moviePlayerDiv.appendChild(iframe);
     }
     

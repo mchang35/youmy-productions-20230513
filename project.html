@@ -12,31 +12,23 @@
 
 <body onload="loadProject();">
 
-<div class="content-container w-100" id="content-container">
-    <div class="head-background w-100">
-        <img id="movie-photo" class="center" src="Images/aboutPagePhoto.webp">
-        <a href="index.html">
-            <img class="logo-sw" src="Images/YoumyProductionsLogo.webp">
-        </a>
-        <div class="topnav">
-            <a href="index.html">HOME</a>
-            <a href="about.html">ABOUT</a>
-            <a class="active" href="projects.html">PROJECTS</a>
-            <a href="contact.html">CONTACT</a>
-        </div>
+<div class="head-background w-100">
+    <img id="movie-photo" class="center" src="Images/aboutPagePhoto.webp">
+    <a href="index.html">
+        <img class="logo-sw" src="Images/YoumyProductionsLogo.webp">
+    </a>
+    <div class="topnav">
+        <a href="index.html">HOME</a>
+        <a href="about.html">ABOUT</a>
+        <a class="active" href="projects.html">PROJECTS</a>
+        <a href="contact.html">CONTACT</a>
     </div>
-    <br>
-    <br>
+</div>
+<div class="remaining-content" style="top:600px;">
     <div class="project-content center">
         <div class="row">
             <div class="col">
-                <div id="movie-player">
-                    <!-- <iframe id="movie-player-iframe" class="invisible" id="movie-player" class="w-100" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    <a id="movie-player-link" class="invisible">
-                        <img id="movie-player-thumbnail" class="invisible"> -->
-                    <!-- </a> -->
-                </div>
-                
+                <div id="movie-player"></div>
                 <div class="row">
                     <div class="col">
                         <p id="movie-name" style="text-align:left"></p>
@@ -62,39 +54,22 @@
                 <p style="margin-bottom:0px;"><span id="selected-pic-num">1</span> / <span id="num-pics"></span></p>
                 <div style="white-space:nowrap;">
                     <a class="prev" onclick="plusPhotoNum(-1);">&#10094;</a>
-                    <img src="Images/photo1.png">
+                    <img>
                     <a class="next" onclick="plusPhotoNum(1);">&#10095;</a>
                 </div>
             </div>
-            <div class="center" id="photo-options">
-                <!-- <img id="photo1" class="selected" src="Images/photo1.png" onclick="selectPhoto('1');">
-                <img id="photo2" class="unselected" src="Images/photo2.png" onclick="selectPhoto('2');">
-                <img id="photo3" class="unselected" src="Images/photo3.png" onclick="selectPhoto('3');">
-                <img id="photo4" class="unselected" src="Images/photo4.png" onclick="selectPhoto('4');">
-                <img id="photo5" class="unselected" src="Images/photo5.png" onclick="selectPhoto('5');">
-                <img id="photo6" class="unselected" src="Images/photo6.png" onclick="selectPhoto('6');">
-                <img id="photo7" class="unselected" src="Images/photo7.png" onclick="selectPhoto('7');">
-                <img id="photo8" class="unselected" src="Images/photo8.png" onclick="selectPhoto('8');">
-                <img id="photo9" class="unselected" src="Images/photo9.png" onclick="selectPhoto('9');">
-                <img id="photo10" class="unselected" src="Images/photo10.png" onclick="selectPhoto('10');">
-                <img id="photo11" class="unselected" src="Images/photo11.png" onclick="selectPhoto('11');">
-                <img id="photo12" class="unselected" src="Images/photo12.png" onclick="selectPhoto('12');">
-                <img id="photo13" class="unselected" src="Images/photo13.png" onclick="selectPhoto('13');">
-                <img id="photo14" class="unselected" src="Images/photo14.png" onclick="selectPhoto('14');">
-                <img id="photo15" class="unselected" src="Images/photo15.png" onclick="selectPhoto('15');">
-                <img id="photo16" class="unselected" src="Images/photo16.png" onclick="selectPhoto('16');">
-                <img id="photo17" class="unselected" src="Images/photo17.png" onclick="selectPhoto('17');"> -->
-            </div>
+            <div class="center" id="photo-options"></div>
         </div>
     </div>
     <br>
     <br>
-</div>
 
-<div class="social-media-banner" id="social-media-banner">
-    <a href="https://instagram.com/youmyfilms?igshid=NTc4MTIwNjQ2YQ==">
-        <img class="h-100" src="Images/IGLogo.webp" alt="IG">
-    </a>
+    <div class="social-media-banner" id="social-media-banner">
+        <a href="https://instagram.com/youmyfilms?igshid=NTc4MTIwNjQ2YQ==">
+            <img class="h-100" src="Images/IGLogo.webp" alt="IG">
+        </a>
+    </div>
+
 </div>
 
 </body>
