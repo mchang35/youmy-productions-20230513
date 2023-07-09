@@ -1,5 +1,8 @@
 var TOTAL_NUM_PICS;
+var SCREEN_WIDTH = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+var MOBILE_SIZE = 820;
 
+// for galleries
 /*
 getCurrentPhotoNum
 parameters: none
@@ -111,6 +114,7 @@ function plusPhotoNum(change) {
 }
 
 /*---------------------------------------------------------*/
+// for specific project pages!
 
 function clickProject(projectName) {
     let url = new URL(window.location);
@@ -201,4 +205,114 @@ async function loadProject() {
 
         moviePhotoOptions.appendChild(img);
     }
+
+    remainingContentTop('project');
+}
+
+/*--------------------------------------------------------*/
+
+function remainingContentTop(page) {
+    let pagePhoto;
+    if (page == 'project') {
+        pagePhoto = document.getElementById("movie-photo");
+    } else {
+        pagePhoto = document.getElementById("header-img");
+    }
+    let topMargin = pagePhoto.height;
+
+    // let screenWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+
+    if (SCREEN_WIDTH > MOBILE_SIZE) {
+        if (page == 'projects') {
+            topMargin = topMargin - 300;
+        } else if (page == 'contact') {
+            topMargin = topMargin - 100;
+        } else if (page = 'project') {
+            topMargin = topMargin + 100;
+        } else if (page = 'about') {
+            topMargin = topMargin - 200;
+        }
+    } else {
+        if (page == 'projects') {
+            topMargin = topMargin - 120;
+        } else if (page == 'contact') {
+            topMargin = topMargin - 50;
+        }
+    }
+    
+    document.getElementsByClassName("remaining-content")[0].style.top = String(topMargin) + "px";
+}
+
+function constructProject(isDesktop, posterPath, movieName, year, outerDiv) {
+    let col = document.createElement("div");
+    if (isDesktop) {
+        col.classList.add("col");
+    }
+    col.classList.add("movie-content");
+    outerDiv.appendChild(col);
+    let moviePoster = document.createElement("img");
+    moviePoster.classList.add("movie-poster");
+    moviePoster.setAttribute("src", posterPath);
+    console.log("movie name: " + movieName);
+    console.log("lower case movie name: " + movieName.toLowerCase());
+    moviePoster.setAttribute("onclick","clickProject('" + movieName.toLowerCase() + "');");
+    col.appendChild(moviePoster);
+    
+    let nameYearRow = document.createElement("div");
+    nameYearRow.classList.add("row");
+    let nameCol = document.createElement("div");
+    nameCol.classList.add("col");
+    let nameP = document.createElement("p");
+    nameP.style.textAlign = "left";
+    nameP.innerHTML = movieName;
+    nameCol.appendChild(nameP);
+    nameYearRow.appendChild(nameCol);
+
+    let yearCol = document.createElement("div");
+    yearCol.classList.add("col");
+    let yearP = document.createElement("p");
+    yearP.style.textAlign = "right";
+    yearP.innerHTML = year;
+    yearCol.appendChild(yearP);
+    nameYearRow.appendChild(yearCol);
+
+    col.appendChild(nameYearRow);
+}
+
+// projects page
+async function loadProjects() {
+    let projects = await (await fetch('movies.json')).json();
+
+    if (projects.length < 0) {
+        return
+    }
+
+    let projectContentDiv = document.getElementById("project-content");
+
+    if (SCREEN_WIDTH > MOBILE_SIZE) {
+        let count = 0;
+        let row;
+        for (let project in projects) {
+            let posterPath = project.poster;
+            let movieName = project.name;
+            let year = project.year;
+            if (count % 2 == 0) {
+                projectContentDiv.appendChild(row);
+                row = document.createElement("div");
+                row.classList.add("row");
+            }
+            constructProject(true, posterPath, movieName, year, row);
+        }
+    } else {
+        console.log("mobile screen");
+        for (let project in projects) {
+            let posterPath = projects[project].poster;
+            let movieName = projects[project].name;
+            let year = projects[project].year;
+            constructProject(false, posterPath, movieName, year, projectContentDiv);
+        }
+    }
+
+    remainingContentTop('projects');
+    
 }

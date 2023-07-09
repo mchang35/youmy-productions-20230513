@@ -36,6 +36,7 @@ Resources that may be useful:
     * [Javascript conditional statements](https://www.w3schools.com/js/js_if_else.asp)
     * [scrollTop and scrollLeft on an element - Javascript](https://www.javascripttutorial.net/dom/css/get-and-set-scroll-position-of-an-element/)
     * [Element.scrollIntoView() - Javascript](https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView)
+    * [Getting the width of the screen](https://stackoverflow.com/questions/6850164/get-the-device-width-in-javascript)
  * Resources related to the gallery:
     * [How to make a photo slideshow gallery in CSS](https://www.w3schools.com/howto/howto_js_slideshow_gallery.asp)
     * [Ideas for the photo gallery](http://www.cssplay.co.uk/menu/gallery3l.html)
@@ -63,18 +64,10 @@ Resources that may be useful:
  * [Duplicate a GitHub Repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/duplicating-a-repository)
 
 Notes:
- * Generally, it takes a while (at least 2-3 minutes) for the connection between the js file and the HTML file to work.
- * For the GALLERY:
-    * DONE
-      * Likely will have to use javascript to get this going
-      * put all photos into a list or something
-      * also have a part that displays the current picture largely
-      * currently selected picture has a border around it or something
-      * wraparound for photos (if we reach the end, we wrap around back to the beginning)
-    * Still to do:
-      * have a next and previous button - done BUT not in the correct place
- * DONE (general):
-   * Place previous and next buttons for gallery in correct spot -- solution: I took the selected photo and prev and next buttons out of the columns and put them into a single div.
-   * place the big logo in the correct place (direct middle)
-   * adjust for PHONE/smaller screens
- * FONT: Rustic Printed (for ALL text)
+ * Top priority to-do: 
+   * mobile view.
+ * Remaining items to fix:
+   * Youmy Productions logo on About, Projects, and Contact pages is pressed right up against the top left. Try to get some space between.
+   * Youmy Productions logo should have transparent background, not black background.
+   * change the fonts of the titles on the About, Projects, and Contact pages? Seems like it's spread out a bit horizontally.
+   * Automatically calculating the top margin of the remaining content for About, Projects, and Contact pages.
