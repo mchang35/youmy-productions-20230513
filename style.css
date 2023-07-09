@@ -243,7 +243,7 @@ hr {
     }
 
     iframe {
-        height: 500px;
+        height: 600px;
     }
     
     /* about, projects, contact pages */
@@ -273,7 +273,11 @@ hr {
     }
 
     #selected-photo img {
-        max-width: 90%;
+        max-width: 80%;
+    }
+
+    #photo-options {
+        max-width: 80%;
     }
     
     .contact-content {

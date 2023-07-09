@@ -257,18 +257,11 @@ async function loadProject() {
     }
 
     let moviePhotoImg = document.getElementById("movie-photo");
-    let moviePlayerDiv = document.getElementById("movie-player");
-    let movieNameP = document.getElementById("movie-name");
-    let movieYearP = document.getElementById("movie-year");
-    let movieDescDiv = document.getElementById("movie-desc");
-    let moviePosterImg = document.getElementById("movie-poster");
     let movieSelectedPhoto = document.getElementById("selected-photo");
     let moviePhotoOptions = document.getElementById("photo-options");
     let movieNumPics = document.getElementById("num-pics");
 
     moviePhotoImg.src = selectedMovie.photo;
-
-    moviePosterImg.src = selectedMovie.poster;
 
     let photoDir = selectedMovie.gallery_path;
 
