@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body onload="loadHomeHeader()">
 
 <div class="topnav">
     <a class="active" href="index.html">HOME</a>
@@ -22,16 +22,16 @@
 
 <div class="content-container w-100" id="content-container">
     <br><br><br>
-    <div class="homepage-header">
+    <div class="home-header">
         <div class="overlay">
             <video id="background-video" autoplay loop muted poster="Images/dorms/18.webp">
-                <source src="homePageRunning.mov" type="video/mp4">
+                <source src="homePageRunning.mp4" type="video/mp4">
             </video>
               
-            <a href="index.html">
+            <a id="home-logo" href="index.html">
                 <img class="logo-w logo" src="Images/YoumyProductionsLogo.webp">
             </a>
-            <div class="row">
+            <div id="header-bottom" class="row">
                 <div class="col">
                     <h4 style="text-align:left; margin-left:10%;">DORMS</h4> 
                 </div>
@@ -41,7 +41,8 @@
             </div>
         </div>
     </div>
-    <br>
+
+<!-- <div class="remaining-content"> -->
     <div class="embedded-movie center w-75">
         <iframe class="w-100" src="https://www.youtube.com/embed/IvWtwWIEA14" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         <div class="embedded-movie-description-grid">
@@ -86,6 +87,9 @@
         <img class="h-100" src="Images/IGLogo.webp" alt="IG">
     </a>
 </div>
+
+    
+<!-- </div> -->
 
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 <script src="bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>

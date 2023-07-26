@@ -292,7 +292,7 @@ async function loadProject() {
 
 /*--------------------------------------------------------*/
 
-function remainingContentTop(page) {
+function remainingContentTop(page, videoHeight=null) {
     let pagePhoto;
     if (page == 'project') {
         pagePhoto = document.getElementById("movie-photo");
@@ -301,7 +301,9 @@ function remainingContentTop(page) {
     }
     let topMargin = pagePhoto.height;
 
-    // let screenWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+    // if (page == 'home') {
+    //     topMargin = videoHeight;
+    // }
 
     if (SCREEN_WIDTH > MOBILE_SIZE) {
         if (page == 'projects') {
@@ -324,6 +326,26 @@ function remainingContentTop(page) {
     }
     
     document.getElementsByClassName("remaining-content")[0].style.top = String(topMargin) + "px";
+
+}
+
+// spacing of the Youmy logo and "DORMS" and "2023"
+function loadHomeHeader() {
+    let loopedVideo = document.getElementById("background-video");
+    let videoHeight = loopedVideo.videoHeight;
+
+    console.log("Video height: " + videoHeight);
+
+    let logoTopMargin = videoHeight / 2;
+    let bottomTopMargin = videoHeight - 50;
+
+    console.log("Logo's top margin: " + logoTopMargin);
+    console.log("Bottom line's top margin: " + bottomTopMargin);
+
+    document.getElementById("home-logo").style.top = String(logoTopMargin) + "px";
+    document.getElementById("header-bottom").style.top = String(bottomTopMargin) + "px";
+
+    // remainingContentTop('home', videoHeight);
 }
 
 /*-------------------------------------------------------------*/

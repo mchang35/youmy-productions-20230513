@@ -62,6 +62,7 @@ Resources that may be useful:
  * [Force a div to appear below, not next to, another -- clear:both; (CSS)](https://stackoverflow.com/questions/2492873/how-to-force-div-to-appear-below-not-next-to-another)
  * [Convert casing of text](https://convertcase.net/)
  * [Duplicate a GitHub Repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/duplicating-a-repository)
+ * [Putting a video as a background](https://codepen.io/hubspot/pen/abJXWdE)
 
 Notes:
  * Top priority to-do: 
