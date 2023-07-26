@@ -112,6 +112,16 @@ span.upper-case {
     height: auto;
 }
 
+#home-logo {
+    position: absolute;
+    /* left: 50%; */
+}
+
+#header-bottom {
+    position: absolute;
+    width: 100vw;
+}
+
 .embedded-movie img {
     object-fit: contain;
     max-width: 100%;
@@ -267,9 +277,9 @@ hr {
         top: 450px;
     }
 
-    .remaining-content .projects {
+    /* .remaining-content .projects {
         top: 200px;
-    }
+    } */
     
     .about-content p {
         width: 75%;
@@ -296,7 +306,7 @@ hr {
 
 @media only screen and (max-width: 820px) {
     .topnav a {
-        padding: 8px 10px;
+        padding: 5px 10px;
         font-size: 12px;
     }
 
@@ -307,6 +317,14 @@ hr {
 
     iframe {
         height: 200px;
+    }
+
+    #header-bottom h4 {
+        font-size: 12px;
+    }
+
+    .logo {
+        max-width: 40%;
     }
 
     .about-content {

@@ -295,37 +295,24 @@ async function loadProject() {
 function remainingContentTop(page) {
     let pagePhoto;
     let topMargin;
-    if (page == 'home') {
-        pagePhoto = document.getElementById("background-video");
-        topMargin = pagePhoto.videoHeight;
-        console.log("video height in remaining content function: " + topMargin);
-    } else {
-        if (page == 'project') {
-            pagePhoto = document.getElementById("movie-photo");
-        } else {
-            pagePhoto = document.getElementById("header-img");
-        }
 
-        topMargin = pagePhoto.height;
+    if (page == 'project') {
+        pagePhoto = document.getElementById("movie-photo");
+    } else {
+        pagePhoto = document.getElementById("header-img");
     }
 
+    topMargin = pagePhoto.height;
+
     if (SCREEN_WIDTH > MOBILE_SIZE) {
-        console.log("console width > mobile size");
         if (page == 'projects') {
             topMargin = topMargin - 300;
-            console.log("projects");
         } else if (page == 'contact') {
             topMargin = topMargin - 100;
-            console.log("contact");
         } else if (page == 'project') {
             topMargin = topMargin + 100;
-            console.log("project");
-        } else if (page == 'about') {
-            topMargin = topMargin - 200;
-            console.log("about");
         }
     } else {
-        console.log("console width < mobile size");
         if (page == 'projects') {
             topMargin = topMargin - 120;
         } else if (page == 'contact') {
@@ -337,29 +324,28 @@ function remainingContentTop(page) {
     
     document.getElementsByClassName("remaining-content")[0].style.top = String(topMargin) + "px";
 
-    console.log("remaining content top margin: " + topMargin);
-
 }
 
 // spacing of the Youmy logo and "DORMS" and "2023"
 function loadHomeHeader() {
-    let loopedVideo = document.getElementById("background-video");
-    let videoHeight = loopedVideo.videoHeight;
+    let videoHeight = SCREEN_WIDTH / (2.4);
 
-    console.log("Video height: " + videoHeight);
+    let homeLogo = document.getElementsByClassName("logo")[0];
+    let homeLogoHeight = homeLogo.height;
 
-    let logoTopMargin = videoHeight / 2;
-    let bottomTopMargin = videoHeight - 50;
+    let logoTopMargin = (videoHeight / 2) - (homeLogoHeight / 2);
 
-    console.log("Logo's top margin: " + logoTopMargin);
-    console.log("Bottom line's top margin: " + bottomTopMargin);
+    let bottomTopMargin;
+    if (SCREEN_WIDTH > MOBILE_SIZE) {
+        bottomTopMargin = videoHeight - 50;
+    } else {
+        bottomTopMargin = videoHeight - 20;
+    }
 
     document.getElementById("home-logo").style.top = String(logoTopMargin) + "px";
     document.getElementById("header-bottom").style.top = String(bottomTopMargin) + "px";
 
-    // remainingContentTop('home');
-
-    document.getElementsByClassName("remaining-content")[0].style.top = "100px";
+    document.getElementsByClassName("remaining-content")[0].style.top = String(videoHeight) + "px";
 }
 
 /*-------------------------------------------------------------*/
