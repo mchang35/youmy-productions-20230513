@@ -66,9 +66,9 @@ Resources that may be useful:
 
 Notes:
  * Top priority to-do: 
-   * mobile view.
+   * Figure out how to space the logo, bottom line, and remaining content on the home page
  * Remaining items to fix:
    * Youmy Productions logo on About, Projects, and Contact pages is pressed right up against the top left. Try to get some space between.
    * Youmy Productions logo should have transparent background, not black background.
    * change the fonts of the titles on the About, Projects, and Contact pages? Seems like it's spread out a bit horizontally.
-   * Automatically calculating the top margin of the remaining content for About, Projects, and Contact pages.
+   * mobile view for the home page

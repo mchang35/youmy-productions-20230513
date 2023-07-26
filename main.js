@@ -292,30 +292,40 @@ async function loadProject() {
 
 /*--------------------------------------------------------*/
 
-function remainingContentTop(page, videoHeight=null) {
+function remainingContentTop(page) {
     let pagePhoto;
-    if (page == 'project') {
-        pagePhoto = document.getElementById("movie-photo");
+    let topMargin;
+    if (page == 'home') {
+        pagePhoto = document.getElementById("background-video");
+        topMargin = pagePhoto.videoHeight;
+        console.log("video height in remaining content function: " + topMargin);
     } else {
-        pagePhoto = document.getElementById("header-img");
-    }
-    let topMargin = pagePhoto.height;
+        if (page == 'project') {
+            pagePhoto = document.getElementById("movie-photo");
+        } else {
+            pagePhoto = document.getElementById("header-img");
+        }
 
-    // if (page == 'home') {
-    //     topMargin = videoHeight;
-    // }
+        topMargin = pagePhoto.height;
+    }
 
     if (SCREEN_WIDTH > MOBILE_SIZE) {
+        console.log("console width > mobile size");
         if (page == 'projects') {
             topMargin = topMargin - 300;
+            console.log("projects");
         } else if (page == 'contact') {
             topMargin = topMargin - 100;
-        } else if (page = 'project') {
+            console.log("contact");
+        } else if (page == 'project') {
             topMargin = topMargin + 100;
-        } else if (page = 'about') {
+            console.log("project");
+        } else if (page == 'about') {
             topMargin = topMargin - 200;
+            console.log("about");
         }
     } else {
+        console.log("console width < mobile size");
         if (page == 'projects') {
             topMargin = topMargin - 120;
         } else if (page == 'contact') {
@@ -326,6 +336,8 @@ function remainingContentTop(page, videoHeight=null) {
     }
     
     document.getElementsByClassName("remaining-content")[0].style.top = String(topMargin) + "px";
+
+    console.log("remaining content top margin: " + topMargin);
 
 }
 
@@ -345,7 +357,9 @@ function loadHomeHeader() {
     document.getElementById("home-logo").style.top = String(logoTopMargin) + "px";
     document.getElementById("header-bottom").style.top = String(bottomTopMargin) + "px";
 
-    // remainingContentTop('home', videoHeight);
+    // remainingContentTop('home');
+
+    document.getElementsByClassName("remaining-content")[0].style.top = "100px";
 }
 
 /*-------------------------------------------------------------*/
